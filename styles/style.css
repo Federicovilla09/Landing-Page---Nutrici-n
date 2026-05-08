@@ -142,7 +142,8 @@ button {
    ============================================ */
 .hero {
     width: 100%;
-    padding: var(--space-40) var(--navbar-padding-x-mobile);
+    padding:var(--navbar-padding-x-mobile);
+    margin-top: var(--space-80);
 }
 
 .hero__container {
@@ -223,7 +224,6 @@ button {
    ============================================ */
 .hero__stats {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     gap: var(--space-24);
 }

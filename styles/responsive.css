@@ -16,12 +16,6 @@
    - Pills come back at desktop (≥1024)
    ============================================ */
 @media (max-width: 719.98px) {
-    /* Body breathing room for the floating CTA so the last
-       content line never sits under the pill at max scroll. */
-    body {
-        padding-bottom: 80px;
-    }
-
     /* ============================================
        NAVBAR — MOBILE — Figma 2486:1220
        ============================================ */
@@ -59,6 +53,13 @@
     /* ============================================
        HERO — MOBILE — Figma 2486:865
        ============================================ */
+    /* Padding-bottom 0 so the divider's margin-top alone
+       owns the Hero ↔ divider spacing (104px from the
+       divider rule below). */
+    .hero {
+        padding-bottom: 0;
+    }
+
     .hero__container {
         gap: var(--space-64);
     }
@@ -71,8 +72,22 @@
         gap: var(--space-56);
     }
 
+    /* Figma has 2 nested gaps inside the copy block:
+       - Hero Section gap 56 (eyebrow ↔ description)
+       - Hero Description gap 32 (heading ↔ subtitle)
+       Single .hero__copy gap can't hold both; we use 32
+       (matches the description) and add margin-bottom
+       on the eyebrow so eyebrow ↔ heading totals 32+24=56. */
     .hero__copy {
-        gap: var(--space-56);
+        gap: var(--space-32);
+    }
+
+    .hero__eyebrow {
+        margin-bottom: var(--space-24);
+    }
+
+    .hero__eyebrow span {
+        font-size: var(--font-size-xs);
     }
 
     .hero__heading {
@@ -94,6 +109,16 @@
 
     .stat__label {
         font-size: var(--font-size-xs);
+    }
+
+    /* ============================================
+       DIVIDER — MOBILE
+       104px of vertical spacing on each side of the
+       line is the new reference for ALL section gaps
+       on mobile (replaces the 128 used at tablet+).
+       ============================================ */
+    .divider {
+        margin-block: 104px;
     }
 
     /* ============================================
@@ -133,6 +158,7 @@
 
     .modes-card__title {
         font-size: 20px;
+        text-align: left;
     }
 
     .modes-card__description {
@@ -234,9 +260,12 @@
 
     /* ============================================
        FOOTER — MOBILE — Figma 2487:1651
+       Extra padding-bottom (128) gives breathing room for
+       the floating .btn-cta at max scroll, using the
+       footer's own dark bg (no white gap below the page).
        ============================================ */
     .footer {
-        padding: var(--space-56) var(--space-16);
+        padding: var(--space-56) var(--space-16) var(--space-128);
     }
 
     .footer__container {
