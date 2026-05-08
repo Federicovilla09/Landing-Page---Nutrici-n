@@ -1,0 +1,25 @@
+# MCP / secrets
+.mcp.json
+.mcp/
+.env
+.env.*
+!.env.example
+
+# Node / build
+node_modules/
+dist/
+build/
+*.log
+npm-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude
+.claude/

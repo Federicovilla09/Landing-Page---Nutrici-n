@@ -1,0 +1,110 @@
+:root {
+    /* ============================================
+       NEUTRAL SCALE
+       ============================================ */
+    --neutral-100: #ffffff;
+    --neutral-200: #f5f5f5;
+    --neutral-300: #e5e5e5;
+    --neutral-400: #cfcfcf;
+    --neutral-500: #8a8a8a;
+    --neutral-550: #757575;
+    --neutral-600: #5e5e5e;
+    --neutral-700: #4b4848;
+    --neutral-800: #2e2e2e;
+    --neutral-900: #0b1510;
+
+    /* ============================================
+       BRAND PLACEHOLDERS
+       TODO: replace once brand palette is defined.
+       Pulled directly from Figma 2437:835 to match
+       the design 1:1 in the meantime.
+       ============================================ */
+    --accent-primary: #b85c3d;
+    --accent-primary-fg: var(--neutral-100);
+    --brand-logo: #284f3c;
+    --brand-dark: #1f3d36;
+    --brand-cream: #ebe8dc;
+    --brand-cream-light: #f4f1ec;
+    --brand-rating: #3f735c;
+    --divider-color: #0d656c;
+    --shadow-warm: rgba(235, 232, 220, 1);
+
+    /* ============================================
+       SPACING
+       ============================================ */
+    --space-2: 2px;
+    --space-4: 4px;
+    --space-6: 6px;
+    --space-8: 8px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-40: 40px;
+    --space-48: 48px;
+    --space-56: 56px;
+    --space-64: 64px;
+    --space-72: 72px;
+    --space-80: 80px;
+    --space-128: 128px;
+    --space-160: 160px;
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    --font-family-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 30px;
+    --font-size-3xl: 48px;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --line-height-tight: 1.366;
+    --line-height-relaxed: 1.714;
+
+    --letter-spacing-tight: 0.008em;
+    --letter-spacing-normal: 0.057em;
+    --letter-spacing-wide: 0.067em;
+
+    /* ============================================
+       BORDER-RADIUS
+       ============================================ */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-pill: 9999px;
+
+    /* ============================================
+       SHADOWS
+       ============================================ */
+    --shadow-navbar: 0 4px 4px 0 var(--shadow-warm);
+    --shadow-image: 1px 1px 8px 0 rgba(75, 72, 72, 1);
+    --shadow-card: 1px 1px 8px 0 var(--shadow-warm);
+    --shadow-testimonial: 1px 1px 4px 0 rgba(18, 130, 139, 1);
+
+    /* ============================================
+       TRANSITIONS
+       ============================================ */
+    --transition-fast: 150ms ease-out;
+    --transition-base: 200ms ease-out;
+    --transition-slow: 300ms ease-out;
+
+    /* ============================================
+       LAYOUT
+       ============================================ */
+    --container-max: 1280px;
+    --container-content: 1120px;
+    --navbar-padding-x-mobile: var(--space-24);
+    --navbar-padding-x-tablet: var(--space-40);
+    --navbar-padding-x-desktop: var(--space-80);
+    --navbar-padding-y-mobile: var(--space-16);
+    --navbar-padding-y-desktop: var(--space-32);
+}

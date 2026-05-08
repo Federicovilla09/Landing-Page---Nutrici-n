@@ -1,0 +1,790 @@
+/* ============================================
+   RESET
+   ============================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-tight);
+    color: var(--neutral-900);
+    background-color: var(--neutral-100);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+/* ============================================
+   NAVBAR LAYOUT
+   ============================================ */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: var(--neutral-100);
+    box-shadow: var(--shadow-navbar);
+}
+
+.navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-16);
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--navbar-padding-y-mobile) var(--navbar-padding-x-mobile);
+}
+
+.navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+    flex-shrink: 0;
+}
+
+.navbar__logo {
+    width: 40px;
+    height: 34px;
+    color: var(--brand-logo);
+    flex-shrink: 0;
+}
+
+.navbar__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.navbar__name {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-900);
+}
+
+.navbar__title {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-wide);
+    color: var(--neutral-700);
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-32);
+}
+
+.navbar__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+/* ============================================
+   MOBILE TOGGLE (CSS-only checkbox hack)
+   ============================================ */
+.navbar__toggle-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navbar__toggle {
+    display: none;
+}
+
+/* ============================================
+   HERO LAYOUT
+   ============================================ */
+.hero {
+    width: 100%;
+    padding: var(--space-40) var(--navbar-padding-x-mobile);
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-40);
+    width: 100%;
+    max-width: var(--container-content);
+    margin: 0 auto;
+}
+
+.hero__row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-40);
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+}
+
+.hero__copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+}
+
+.hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-700);
+}
+
+.hero__eyebrow-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--neutral-700);
+    flex-shrink: 0;
+}
+
+.hero__heading {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.017em;
+    color: var(--neutral-800);
+}
+
+.hero__heading-accent {
+    color: var(--accent-primary);
+}
+
+.hero__subtitle {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.044em;
+    color: var(--neutral-700);
+}
+
+.hero__image {
+    width: 100%;
+    aspect-ratio: 548 / 443;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-image);
+}
+
+/* ============================================
+   HERO STATISTICS
+   ============================================ */
+.hero__stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-24);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    flex: 1 1 auto;
+    min-width: 120px;
+}
+
+/* ============================================
+   ABOUT ME LAYOUT
+   ============================================ */
+.about-me {
+    width: 100%;
+    padding: 0 var(--navbar-padding-x-mobile);
+}
+
+.about-me__container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-40);
+    width: 100%;
+    max-width: var(--container-content);
+    margin: 0 auto;
+}
+
+.about-me__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+}
+
+.about-me__title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+}
+
+.about-me__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-700);
+}
+
+.about-me__eyebrow-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.about-me__heading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.about-me__name {
+    /* 36px is unique to this section — kept literal to avoid
+       polluting the global font-size scale used by the hero. */
+    font-size: 28px;
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.022em;
+    color: var(--neutral-800);
+}
+
+.about-me__subtitle {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--accent-primary);
+}
+
+.about-me__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+}
+
+.about-me__paragraph {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.044em;
+    color: var(--neutral-700);
+}
+
+.about-me__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+}
+
+.about-me__media {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.about-me__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* ============================================
+   MODES LAYOUT
+   ============================================ */
+.modes {
+    width: 100%;
+    padding: 0 var(--navbar-padding-x-mobile);
+}
+
+.modes__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-40);
+    width: 100%;
+    max-width: var(--container-content);
+    margin: 0 auto;
+}
+
+.modes__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+}
+
+.modes__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-700);
+}
+
+.modes__eyebrow-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.modes__heading {
+    /* 36px is unique to this section's h2 — kept literal,
+       same approach as .about-me__name. */
+    font-size: 28px;
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.022em;
+    color: var(--neutral-800);
+}
+
+.modes__subtitle {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.044em;
+    color: var(--neutral-700);
+}
+
+.modes__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-24);
+}
+
+/* ============================================
+   RESOURCES LAYOUT
+   ============================================ */
+.resources {
+    width: 100%;
+    padding: 0 var(--navbar-padding-x-mobile);
+}
+
+.resources__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-40);
+    width: 100%;
+    max-width: var(--container-content);
+    margin: 0 auto;
+}
+
+.resources__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+}
+
+.resources__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-700);
+}
+
+.resources__eyebrow-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.resources__heading {
+    /* 36px is the section h2 size — kept literal, same approach
+       as .about-me__name and .modes__heading. */
+    font-size: 28px;
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.022em;
+    color: var(--neutral-800);
+}
+
+.resources__subtitle {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.044em;
+    color: var(--neutral-700);
+}
+
+/* Horizontal scroll slider on mobile/tablet (CSS only).
+   Restored to a 3-col grid at ≥1024 in responsive.css. */
+.resources__cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--space-16);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: var(--space-8);
+}
+
+.resources__cards::-webkit-scrollbar {
+    display: none;
+}
+
+.resources__cards .resource-card {
+    flex: 0 0 75%;
+    min-width: 240px;
+    scroll-snap-align: start;
+}
+
+/* ============================================
+   TESTIMONIALS LAYOUT
+   ============================================ */
+.testimonials {
+    width: 100%;
+    padding: 0 var(--navbar-padding-x-mobile);
+}
+
+.testimonials__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-40);
+    width: 100%;
+    max-width: var(--container-content);
+    margin: 0 auto;
+}
+
+.testimonials__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+}
+
+.testimonials__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-700);
+}
+
+.testimonials__eyebrow-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.testimonials__heading {
+    /* 36px is the section h2 size — kept literal, same approach
+       as .about-me__name, .modes__heading, .resources__heading. */
+    font-size: 28px;
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.022em;
+    color: var(--neutral-800);
+}
+
+.testimonials__subtitle {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.044em;
+    color: var(--neutral-700);
+}
+
+.testimonials__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-24);
+}
+
+/* Hidden SVG sprite host for the lucide-star symbol.
+   Width/height 0 keeps it out of the layout flow. */
+.testimonials__sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* ============================================
+   START / FINAL CTA LAYOUT
+   ============================================ */
+.start {
+    width: 100%;
+    padding: 0 var(--navbar-padding-x-mobile);
+}
+
+.start__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-40);
+    width: 100%;
+    max-width: var(--container-content);
+    margin: 0 auto;
+}
+
+.start__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-32);
+    padding: var(--space-32) var(--space-16) var(--space-48);
+    background-color: var(--brand-logo);
+    border-radius: var(--radius-lg);
+    color: var(--neutral-100);
+    text-align: center;
+}
+
+.start__eyebrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-8);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-100);
+}
+
+.start__eyebrow-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--neutral-100);
+    flex-shrink: 0;
+}
+
+.start__heading {
+    /* Bold/36 from Figma — kept literal as with other section h2s. */
+    font-size: 28px;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    text-align: center;
+    color: var(--neutral-100);
+}
+
+.start__description {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.044em;
+    text-align: center;
+    color: var(--neutral-100);
+}
+
+/* CTA inside the green block matches Figma's fixed 336 width
+   while staying responsive on small viewports. */
+.start__contact .btn-cream {
+    width: 100%;
+    max-width: 336px;
+}
+
+.start__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+}
+
+/* ============================================
+   FOOTER LAYOUT (v2 — 3 columns, dark background)
+   - 160px gap from the previous section, no
+     visible divider between them.
+   ============================================ */
+.footer {
+    width: 100%;
+    margin-top: var(--space-160);
+    padding: var(--space-32) var(--navbar-padding-x-mobile);
+    background-color: var(--neutral-900);
+    color: var(--neutral-100);
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-40);
+    width: 100%;
+    max-width: var(--container-content);
+    margin: 0 auto;
+}
+
+.footer__top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+}
+
+.footer__brand,
+.footer__contact,
+.footer__location {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    font-style: normal; /* reset <address> italic default */
+}
+
+.footer__name {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.044em;
+    color: var(--neutral-100);
+}
+
+.footer__role {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    color: var(--neutral-550);
+}
+
+.footer__col-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-550);
+}
+
+.footer__contact-line,
+.footer__location-line {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    color: var(--neutral-100);
+}
+
+.footer__contact a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+}
+
+.footer__contact a:hover {
+    opacity: 0.7;
+}
+
+.footer__contact a:focus-visible {
+    outline: 2px solid var(--neutral-100);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* "Ver consultorio" link with trailing arrow icon.
+   Scoped to footer — single use, not promoted to a
+   reusable component yet. */
+.footer__cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    align-self: flex-start;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--brand-rating);
+    transition:
+        opacity var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.footer__cta-link:hover {
+    opacity: 0.8;
+}
+
+.footer__cta-link:hover .footer__cta-link__icon {
+    transform: translate(2px, -2px);
+}
+
+.footer__cta-link:focus-visible {
+    outline: 2px solid var(--brand-rating);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.footer__cta-link__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+}
+
+.footer__line {
+    width: 100%;
+    height: 0;
+    border: 0;
+    border-top: 1px solid var(--neutral-700);
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-16);
+}
+
+.footer__copyright {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
+    line-height: 2;
+    letter-spacing: 0.067em;
+    color: var(--neutral-550);
+}

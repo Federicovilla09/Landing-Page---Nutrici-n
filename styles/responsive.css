@@ -1,0 +1,503 @@
+/* ============================================
+   MOBILE-FIRST: base styles handle <768px.
+   This file holds tablet (≥768px) and desktop
+   (≥1024px) overrides.
+
+   Note: the Figma frame only ships a desktop
+   composition (1280px). Mobile layout adapts
+   the same hierarchy into a collapsible menu
+   without inventing new visual elements.
+   ============================================ */
+
+/* ============================================
+   MOBILE (default, <768px)
+   - Minimal navbar: brand + CTA only
+   - Nav links hidden (no hamburger menu)
+   - Pills come back at desktop (≥1024)
+   ============================================ */
+@media (max-width: 767.98px) {
+    .navbar__links,
+    .hamburger {
+        display: none;
+    }
+
+    /* Very tight viewports: keep brand compact when
+       brand + CTA pressure the row. */
+    @media (max-width: 359.98px) {
+        .navbar__title {
+            display: none;
+        }
+    }
+}
+
+/* ============================================
+   TABLET (≥768px)
+   - Minimal navbar: brand + CTA only
+   - Hamburger hidden, nav links hidden
+   - Pills come back at desktop (≥1024)
+   ============================================ */
+@media (min-width: 768px) {
+    .navbar__inner {
+        padding: var(--space-24) var(--navbar-padding-x-tablet);
+    }
+
+    .navbar__toggle,
+    .navbar__toggle-input {
+        display: none;
+    }
+
+    .navbar__menu {
+        position: static;
+        flex-direction: row;
+        max-height: none;
+        opacity: 1;
+        visibility: visible;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .navbar__links {
+        display: none;
+    }
+}
+
+/* ============================================
+   DESKTOP (≥1024px) — exact Figma values
+   - Pills come back inline (hidden at tablet)
+   ============================================ */
+@media (min-width: 1024px) {
+    .navbar__inner {
+        padding: var(--navbar-padding-y-desktop) var(--navbar-padding-x-desktop);
+    }
+
+    .navbar__links {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-8);
+    }
+}
+
+/* ============================================
+   HERO — TABLET (≥768px)
+   - Bigger typography, more breathing room.
+   - Layout still stacked (image below copy).
+   ============================================ */
+@media (min-width: 768px) {
+    .hero {
+        padding: var(--space-64) var(--navbar-padding-x-tablet);
+    }
+
+    .hero__container {
+        gap: var(--space-48);
+    }
+
+    .hero__row {
+        gap: var(--space-48);
+    }
+
+    .hero__heading {
+        font-size: 40px;
+    }
+
+    .hero__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .btn-primary {
+        font-size: var(--font-size-lg);
+    }
+
+    .hero__stats {
+        gap: var(--space-40);
+    }
+
+    /* Divider — wider side padding (128px Y inherited from base) */
+    .divider {
+        width: calc(100% - 2 * var(--navbar-padding-x-tablet));
+    }
+
+    /* About Me — bigger typography, layout still stacked */
+    .about-me {
+        padding: 0 var(--navbar-padding-x-tablet);
+    }
+
+    .about-me__container {
+        gap: var(--space-48);
+    }
+
+    .about-me__name {
+        font-size: 32px;
+    }
+
+    .about-me__paragraph,
+    .feature-item__text {
+        font-size: var(--font-size-lg);
+    }
+
+    .btn-outline {
+        font-size: var(--font-size-lg);
+    }
+
+    /* ============================================
+       MODES — TABLET
+       - Stack still column (548×2 + gap doesn't fit)
+       - Bigger card padding + scaled typography
+       ============================================ */
+    .modes {
+        padding: 0 var(--navbar-padding-x-tablet);
+    }
+
+    .modes__container {
+        gap: var(--space-48);
+    }
+
+    .modes__heading {
+        font-size: 32px;
+    }
+
+    .modes__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .modes-card {
+        padding: var(--space-32);
+        gap: var(--space-40);
+    }
+
+    .modes-card__title {
+        font-size: 24px;
+    }
+
+    .modes-card__description {
+        font-size: var(--font-size-md);
+    }
+
+    .modes-card__features .feature-item__text {
+        font-size: var(--font-size-lg);
+    }
+
+    .btn-cream {
+        font-size: var(--font-size-lg);
+    }
+
+    /* ============================================
+       RESOURCES — TABLET
+       - 2-column grid for the cards
+       ============================================ */
+    .resources {
+        padding: 0 var(--navbar-padding-x-tablet);
+    }
+
+    .resources__container {
+        gap: var(--space-48);
+    }
+
+    .resources__heading {
+        font-size: 32px;
+    }
+
+    .resources__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Slider tablet: cards más amplias, 2 visibles a la vez */
+    .resources__cards {
+        gap: var(--space-24);
+    }
+
+    .resources__cards .resource-card {
+        flex-basis: calc(50% - var(--space-24) / 2);
+    }
+
+    /* ============================================
+       TESTIMONIALS — TABLET — Figma 2-col grid
+       ============================================ */
+    .testimonials {
+        padding: 0 var(--navbar-padding-x-tablet);
+    }
+
+    .testimonials__container {
+        gap: var(--space-56);
+    }
+
+    .testimonials__heading {
+        font-size: 32px;
+    }
+
+    .testimonials__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .testimonials__cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-32);
+    }
+
+    /* ============================================
+       START — TABLET — bigger gaps, 3-col cards
+       ============================================ */
+    .start {
+        padding: 0 var(--navbar-padding-x-tablet);
+    }
+
+    .start__container {
+        gap: var(--space-72);
+    }
+
+    .start__contact {
+        gap: var(--space-48);
+    }
+
+    .start__heading {
+        font-size: 32px;
+    }
+
+    .start__description {
+        font-size: var(--font-size-lg);
+    }
+
+    .start__cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-24);
+    }
+
+    .info-card {
+        padding: var(--space-32);
+    }
+
+    /* ============================================
+       FOOTER — TABLET
+       - 3 columns side-by-side, gap 24
+       - Container gap follows Figma desktop (48)
+       ============================================ */
+    .footer {
+        padding: var(--space-48) var(--navbar-padding-x-tablet);
+    }
+
+    .footer__container {
+        gap: var(--space-48);
+    }
+
+    .footer__top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: var(--space-24);
+    }
+}
+
+/* ============================================
+   HERO — DESKTOP (≥1024px) — exact Figma
+   - Row layout: copy left, image right
+   - Gap 119px between columns (Figma value)
+   - Content column matches image height,
+     button pushed to bottom (space-between)
+   ============================================ */
+@media (min-width: 1024px) {
+    .hero {
+        padding: var(--space-64) var(--navbar-padding-x-desktop);
+    }
+
+    .hero__row {
+        flex-direction: row;
+        align-items: center;
+        /* Figma exact: 119px between text column and image */
+        gap: 119px;
+    }
+
+    .hero__content {
+        flex: 1 1 0;
+        align-self: stretch;
+        justify-content: space-between;
+        gap: var(--space-32);
+    }
+
+    .hero__heading {
+        font-size: var(--font-size-3xl);
+        max-width: 450px;
+    }
+
+    .hero__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .btn-primary {
+        font-size: var(--font-size-xl);
+    }
+
+    .hero__image {
+        flex: 0 0 auto;
+        width: 548px;
+        height: 443px;
+        aspect-ratio: auto;
+    }
+
+    .hero__stats {
+        gap: var(--space-40);
+    }
+
+    .stat {
+        flex: 0 0 auto;
+        min-width: 144px;
+    }
+
+    .stat__number {
+        font-size: var(--font-size-2xl);
+    }
+
+    /* Divider — full desktop side padding */
+    .divider {
+        width: calc(100% - 2 * var(--navbar-padding-x-desktop));
+    }
+
+    /* ============================================
+       ABOUT ME — DESKTOP — exact Figma
+       - Row layout: content left, image right
+       - Gap 64 between columns
+       - Image fixed 548×548 (square)
+       - Content fills remaining width, button stretched
+       ============================================ */
+    .about-me {
+        padding: 0 var(--navbar-padding-x-desktop);
+    }
+
+    .about-me__container {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-64);
+    }
+
+    .about-me__content {
+        flex: 1 1 0;
+        align-self: stretch;
+        gap: var(--space-64);
+    }
+
+    .about-me__name {
+        font-size: 36px;
+    }
+
+    .about-me__paragraph,
+    .feature-item__text {
+        font-size: var(--font-size-lg);
+    }
+
+    .btn-outline {
+        font-size: var(--font-size-xl);
+    }
+
+    .about-me__media {
+        flex: 0 0 auto;
+        width: 548px;
+        height: 548px;
+    }
+
+    .about-me__image {
+        height: 100%;
+        aspect-ratio: auto;
+    }
+
+    /* ============================================
+       MODES — DESKTOP — exact Figma
+       - Two cards side by side, 548 each
+       - Gap 24 (1120 - 2*548)
+       - Card padding 40, full Figma typography
+       ============================================ */
+    .modes {
+        padding: 0 var(--navbar-padding-x-desktop);
+    }
+
+    .modes__heading {
+        font-size: 36px;
+    }
+
+    .modes__cards {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-24);
+    }
+
+    .modes-card {
+        flex: 0 0 548px;
+        width: 548px;
+        max-width: 548px;
+        padding: var(--space-40);
+        gap: var(--space-40);
+    }
+
+    .modes-card__title {
+        font-size: 26px;
+    }
+
+    .modes-card__features .feature-item__text {
+        font-size: var(--font-size-lg);
+    }
+
+    .btn-cream {
+        font-size: var(--font-size-xl);
+    }
+
+    /* ============================================
+       RESOURCES — DESKTOP — exact Figma
+       - 3-column grid, gap 40
+       - Cards 347 each (1120 - 2*40 = 1040 / 3 ≈ 347)
+       - h2 36 Figma exact
+       ============================================ */
+    .resources {
+        padding: 0 var(--navbar-padding-x-desktop);
+    }
+
+    .resources__heading {
+        font-size: 36px;
+    }
+
+    /* Restore static 3-col grid on desktop (no slider) */
+    .resources__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-40);
+        overflow: visible;
+        scroll-snap-type: none;
+        padding-bottom: 0;
+    }
+
+    .resources__cards .resource-card {
+        min-width: 0;
+    }
+
+    /* ============================================
+       TESTIMONIALS — DESKTOP — exact Figma
+       - 2x2 grid, gap 32, h2 36
+       ============================================ */
+    .testimonials {
+        padding: 0 var(--navbar-padding-x-desktop);
+    }
+
+    .testimonials__heading {
+        font-size: 36px;
+    }
+
+    /* ============================================
+       START — DESKTOP — exact Figma
+       - h2 36 Bold, cards row gap 80 (1120 - 3*320 = 160 / 2)
+       ============================================ */
+    .start {
+        padding: 0 var(--navbar-padding-x-desktop);
+    }
+
+    .start__heading {
+        font-size: 36px;
+    }
+
+    .start__cards {
+        gap: var(--space-80);
+    }
+
+    /* ============================================
+       FOOTER — DESKTOP — exact Figma 56 80
+       ============================================ */
+    .footer {
+        padding: var(--space-56) var(--navbar-padding-x-desktop);
+    }
+}

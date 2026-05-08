@@ -1,0 +1,605 @@
+/* ============================================
+   NAV PILL (links)
+   ============================================ */
+.nav-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-8);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-800);
+    background-color: transparent;
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.nav-pill:hover {
+    background-color: var(--neutral-200);
+}
+
+.nav-pill:focus-visible {
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 2px;
+}
+
+.nav-pill[aria-current="page"] {
+    background-color: var(--neutral-200);
+    font-weight: var(--font-weight-medium);
+}
+
+/* ============================================
+   CTA BUTTON
+   ============================================ */
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-8) var(--space-12);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--accent-primary-fg);
+    background-color: var(--accent-primary);
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+    white-space: nowrap;
+}
+
+.btn-cta:hover {
+    background-color: color-mix(in srgb, var(--accent-primary) 88%, black);
+}
+
+.btn-cta:active {
+    transform: translateY(1px);
+}
+
+.btn-cta:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+}
+
+.btn-cta__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-pill);
+    background-color: var(--accent-primary-fg);
+    flex-shrink: 0;
+}
+
+/* ============================================
+   PRIMARY BUTTON (large dark pill — hero CTA)
+   ============================================ */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-12);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.04em;
+    color: var(--neutral-100);
+    background-color: var(--neutral-900);
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+    white-space: nowrap;
+}
+
+.btn-primary:hover {
+    background-color: color-mix(in srgb, var(--neutral-900) 85%, white);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+.btn-primary:focus-visible {
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 3px;
+}
+
+.btn-primary--block {
+    width: 100%;
+}
+
+/* ============================================
+   OUTLINE BUTTON (transparent pill — about-me CTA)
+   ============================================ */
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-12);
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--brand-dark);
+    background-color: transparent;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.04em;
+    color: var(--brand-dark);
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast);
+    white-space: nowrap;
+}
+
+.btn-outline:hover {
+    background-color: var(--brand-dark);
+    color: var(--neutral-100);
+}
+
+.btn-outline:active {
+    transform: translateY(1px);
+}
+
+.btn-outline:focus-visible {
+    outline: 2px solid var(--brand-dark);
+    outline-offset: 3px;
+}
+
+.btn-outline--block {
+    width: 100%;
+}
+
+/* ============================================
+   CREAM BUTTON (cream pill — modes filled card)
+   ============================================ */
+.btn-cream {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-12);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.04em;
+    color: var(--neutral-900);
+    background-color: var(--brand-cream);
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+    white-space: nowrap;
+}
+
+.btn-cream:hover {
+    background-color: color-mix(in srgb, var(--brand-cream) 88%, black);
+}
+
+.btn-cream:active {
+    transform: translateY(1px);
+}
+
+.btn-cream:focus-visible {
+    outline: 2px solid var(--brand-cream);
+    outline-offset: 3px;
+}
+
+.btn-cream--block {
+    width: 100%;
+}
+
+/* ============================================
+   FEATURE ITEM (icon + label, used in lists)
+   ============================================ */
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.feature-item__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--accent-primary);
+}
+
+.feature-item__text {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.044em;
+    color: var(--neutral-800);
+}
+
+/* ============================================
+   MODES CARD
+   - Reusable card for modality blocks
+   - Two variants: filled (dark green) / outline (white)
+   ============================================ */
+.modes-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+    padding: var(--space-24);
+    border-radius: var(--radius-lg);
+    width: 100%;
+}
+
+.modes-card--filled {
+    background-color: var(--brand-logo);
+    color: var(--brand-cream);
+}
+
+.modes-card--outline {
+    background-color: var(--neutral-100);
+    border: 1px solid var(--brand-dark);
+    color: var(--neutral-700);
+}
+
+.modes-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+}
+
+.modes-card__title {
+    /* 26px is specific to card titles — kept literal. */
+    font-size: 22px;
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.031em;
+    text-align: center;
+}
+
+.modes-card--outline .modes-card__title {
+    color: var(--neutral-800);
+}
+
+.modes-card__description {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+}
+
+.modes-card__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+}
+
+/* Inside cards, feature dots inherit the card's text color
+   instead of the default --accent-primary, so they pair with
+   the card's chromatic context. */
+.modes-card__features .feature-item__icon {
+    color: currentColor;
+}
+
+.modes-card__features .feature-item__text {
+    font-size: var(--font-size-md);
+    color: inherit;
+}
+
+.modes-card__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-16);
+}
+
+.modes-card__phone {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-normal);
+    text-align: center;
+}
+
+/* ============================================
+   RESOURCE CARD
+   - Reusable card for downloadable materials
+   - Image area (placeholder ready for future <img>)
+   - Body with title/description + download link
+   ============================================ */
+.resource-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+    padding: 0 0 var(--space-40);
+    background-color: var(--brand-cream-light);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+.resource-card__media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 347 / 213;
+    background-color: var(--neutral-400);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    overflow: hidden;
+}
+
+.resource-card__media-placeholder {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.555;
+    color: var(--neutral-800);
+}
+
+/* Drop-in styling for future <img class="resource-card__image" />.
+   Container's aspect-ratio prevents layout shift when image loads. */
+.resource-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resource-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-40);
+    padding: 0 var(--space-24);
+}
+
+.resource-card__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.resource-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.555;
+    color: var(--neutral-800);
+}
+
+.resource-card__description {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-700);
+}
+
+/* ============================================
+   DOWNLOAD LINK (text + trailing icon, full width)
+   - Visually a text link, not a pill button
+   ============================================ */
+.download-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    width: 100%;
+    color: var(--brand-logo);
+    transition:
+        opacity var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.download-link__text {
+    flex: 1;
+    text-align: center;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.05em;
+}
+
+.download-link__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.download-link:hover {
+    opacity: 0.75;
+}
+
+.download-link:active {
+    transform: translateY(1px);
+}
+
+.download-link:focus-visible {
+    outline: 2px solid var(--brand-logo);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+}
+
+/* ============================================
+   TESTIMONIAL CARD
+   - Reusable review card with header (name + stars)
+   - Cream-light background, teal shadow (Figma)
+   ============================================ */
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+    padding: var(--space-24) var(--space-16);
+    background-color: var(--brand-cream-light);
+    border: 1px solid var(--brand-cream-light);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-testimonial);
+}
+
+.testimonial-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-16);
+}
+
+.testimonial-card__name {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.555;
+    color: var(--neutral-900);
+}
+
+.testimonial-card__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: var(--brand-rating);
+    flex-shrink: 0;
+}
+
+.testimonial-card__star {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.testimonial-card__text {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    color: var(--neutral-700);
+    white-space: pre-line;
+}
+
+/* ============================================
+   INFO CARD
+   - Compact card with icon + title + description
+   - Used in the final CTA section to surface contact info
+   ============================================ */
+.info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-16);
+    padding: var(--space-24);
+    background-color: var(--neutral-100);
+    border: 1px solid var(--brand-cream-light);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-card);
+}
+
+.info-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.info-card__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--neutral-800);
+}
+
+.info-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.044em;
+    color: var(--neutral-800);
+}
+
+.info-card__description {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    color: var(--neutral-700);
+}
+
+/* ============================================
+   DIVIDER (section separator)
+   - Centered horizontally, max 1120 (Figma)
+   - Width respects each breakpoint's side padding
+   - Reusable: <hr class="divider" />
+   ============================================ */
+.divider {
+    width: calc(100% - 2 * var(--navbar-padding-x-mobile));
+    max-width: var(--container-content);
+    margin: var(--space-128) auto;
+    height: 0;
+    border: 0;
+    border-top: 1px solid var(--divider-color);
+}
+
+/* ============================================
+   STAT (number + label)
+   ============================================ */
+.stat__number {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--accent-primary);
+}
+
+.stat__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--neutral-700);
+}
+
+/* ============================================
+   HAMBURGER (mobile menu trigger)
+   ============================================ */
+.hamburger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: var(--space-8);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.hamburger:hover {
+    background-color: var(--neutral-200);
+}
+
+.hamburger__bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: var(--radius-pill);
+    background-color: var(--neutral-900);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+    transform-origin: center;
+}
+
+/* Open state — turns hamburger into "X" */
+.navbar__toggle-input:checked ~ .navbar__inner .hamburger__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle-input:checked ~ .navbar__inner .hamburger__bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__toggle-input:checked ~ .navbar__inner .hamburger__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
