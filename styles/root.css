@@ -102,8 +102,8 @@
        ============================================ */
     --container-max: 1280px;
     --container-content: 1120px;
-    --navbar-padding-x-mobile: var(--space-24);
-    --navbar-padding-x-tablet: var(--space-40);
+    --navbar-padding-x-mobile: var(--space-16);
+    --navbar-padding-x-tablet: var(--space-48);
     --navbar-padding-x-desktop: var(--space-80);
     --navbar-padding-y-mobile: var(--space-16);
     --navbar-padding-y-desktop: var(--space-32);

@@ -22,6 +22,10 @@ body {
     background-color: var(--neutral-100);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent accidental horizontal page scroll. `clip` instead
+       of `hidden` so it doesn't create a new scroll container
+       that would break the navbar's position: sticky. */
+    overflow-x: clip;
 }
 
 img,
@@ -171,9 +175,8 @@ button {
 
 .hero__eyebrow {
     display: flex;
-    align-items: center;
     gap: var(--space-8);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-relaxed);
     letter-spacing: var(--letter-spacing-normal);
@@ -787,4 +790,5 @@ button {
     line-height: 2;
     letter-spacing: 0.067em;
     color: var(--neutral-550);
+    text-align: center;
 }

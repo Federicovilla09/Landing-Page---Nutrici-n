@@ -1,28 +1,250 @@
 /* ============================================
-   MOBILE-FIRST: base styles handle <768px.
-   This file holds tablet (≥768px) and desktop
+   MOBILE-FIRST: base styles handle <720px.
+   This file holds tablet (≥720px) and desktop
    (≥1024px) overrides.
 
-   Note: the Figma frame only ships a desktop
-   composition (1280px). Mobile layout adapts
-   the same hierarchy into a collapsible menu
-   without inventing new visual elements.
+   Tablet boundary lowered from 768 → 720 so
+   real tablet viewports around 744 (Figma's
+   tablet composition is designed at this size)
+   get tablet rules instead of mobile.
    ============================================ */
 
 /* ============================================
-   MOBILE (default, <768px)
+   MOBILE (default, <720px)
    - Minimal navbar: brand + CTA only
    - Nav links hidden (no hamburger menu)
    - Pills come back at desktop (≥1024)
    ============================================ */
-@media (max-width: 767.98px) {
+@media (max-width: 719.98px) {
+    /* Body breathing room for the floating CTA so the last
+       content line never sits under the pill at max scroll. */
+    body {
+        padding-bottom: 80px;
+    }
+
+    /* ============================================
+       NAVBAR — MOBILE — Figma 2486:1220
+       ============================================ */
     .navbar__links,
     .hamburger {
         display: none;
     }
 
-    /* Very tight viewports: keep brand compact when
-       brand + CTA pressure the row. */
+    .navbar__inner {
+        padding: var(--space-24);
+    }
+
+    .navbar__logo {
+        width: 32px;
+        height: 27px;
+    }
+
+    .navbar__name {
+        color: var(--brand-dark);
+    }
+
+    /* ============================================
+       FLOATING CTA — MOBILE — Figma 2486:1244
+       The same .btn-cta from the navbar gets re-positioned
+       to a viewport-fixed pill at bottom-right. No HTML
+       changes needed.
+       ============================================ */
+    .btn-cta {
+        position: fixed;
+        bottom: calc(var(--space-48) + env(safe-area-inset-bottom, 0px));
+        right: var(--space-16);
+        z-index: 1000;
+    }
+
+    /* ============================================
+       HERO — MOBILE — Figma 2486:865
+       ============================================ */
+    .hero__container {
+        gap: var(--space-64);
+    }
+
+    .hero__row {
+        gap: var(--space-64);
+    }
+
+    .hero__content {
+        gap: var(--space-56);
+    }
+
+    .hero__copy {
+        gap: var(--space-56);
+    }
+
+    .hero__heading {
+        font-size: 26px;
+    }
+
+    .hero__image {
+        height: 300px;
+        aspect-ratio: auto;
+    }
+
+    /* Hero CTA — same dark pill but with rect-32 radius
+       and dark shadow per Figma mobile (matches tablet). */
+    .hero .btn-primary {
+        padding: var(--space-12) var(--space-24);
+        border-radius: 32px;
+        box-shadow: 1px 1px 4px 0 rgba(46, 46, 46, 1);
+    }
+
+    .stat__label {
+        font-size: var(--font-size-xs);
+    }
+
+    /* ============================================
+       ABOUT ME — MOBILE — Figma 2486:1277
+       ============================================ */
+    .about-me__container {
+        gap: var(--space-64);
+    }
+
+    .about-me__content {
+        gap: var(--space-64);
+    }
+
+    .about-me__eyebrow span {
+        font-size: var(--font-size-xs);
+    }
+
+    .about-me__name {
+        font-size: 24px;
+    }
+
+    .about-me__subtitle {
+        font-size: var(--font-size-xs);
+    }
+
+    /* ============================================
+       MODES — MOBILE — Figma 2487:1322
+       Cards stack with the Figma's literal 31 gap.
+       ============================================ */
+    .modes__heading {
+        font-size: 24px;
+    }
+
+    .modes__cards {
+        gap: 31px;
+    }
+
+    .modes-card__title {
+        font-size: 20px;
+    }
+
+    .modes-card__description {
+        font-size: var(--font-size-md);
+    }
+
+    /* ============================================
+       RESOURCES — MOBILE — Figma 2487:1394
+       Slider with cards 347 fixed (matches tablet/desktop).
+       Subtitle bumped to 18 per Figma mobile.
+       ============================================ */
+    .resources__heading {
+        font-size: 24px;
+    }
+
+    .resources__subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .resources__cards .resource-card {
+        flex: 0 0 347px;
+    }
+
+    /* ============================================
+       TESTIMONIALS — MOBILE — Figma 2487:1502
+       Cards become a horizontal slider (vs tablet 1-col
+       stack and desktop 2-col grid). Subtitle hidden.
+       ============================================ */
+    .testimonials__heading {
+        font-size: 24px;
+    }
+
+    .testimonials__subtitle {
+        display: none;
+    }
+
+    .testimonials__cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: var(--space-32);
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: var(--space-8);
+    }
+
+    .testimonials__cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .testimonial-card {
+        flex: 0 0 calc(100% - var(--space-32));
+        max-width: 361px;
+        scroll-snap-align: start;
+    }
+
+    /* ============================================
+       START / CTA FINAL — MOBILE — Figma 2487:1610
+       Green box edge-to-edge (no padding-x on .start),
+       no border-radius, h2 26 Semibold (vs Bold on bigger).
+       ============================================ */
+    .start {
+        padding: 0;
+    }
+
+    .start__container {
+        gap: var(--space-72);
+    }
+
+    .start__contact {
+        gap: var(--space-48);
+        border-radius: 0;
+    }
+
+    .start__heading {
+        font-size: 26px;
+        font-weight: var(--font-weight-semibold);
+    }
+
+    .start__cards {
+        gap: var(--space-32);
+        padding: 0 var(--space-16);
+    }
+
+    .info-card {
+        padding: var(--space-32);
+    }
+
+    /* btn-cream uses asymmetric 12 8 padding on mobile per
+       Figma (affects Modes "Contactar por WhatsApp" + Start
+       contact button — both share the cream pill). */
+    .btn-cream {
+        padding: var(--space-12) var(--space-8);
+    }
+
+    /* ============================================
+       FOOTER — MOBILE — Figma 2487:1651
+       ============================================ */
+    .footer {
+        padding: var(--space-56) var(--space-16);
+    }
+
+    .footer__container {
+        gap: var(--space-48);
+    }
+
+    /* Very tight viewports: keep brand compact when the
+       title pressures the navbar row. */
     @media (max-width: 359.98px) {
         .navbar__title {
             display: none;
@@ -31,14 +253,16 @@
 }
 
 /* ============================================
-   TABLET (≥768px)
+   TABLET (≥720px)
    - Minimal navbar: brand + CTA only
    - Hamburger hidden, nav links hidden
    - Pills come back at desktop (≥1024)
    ============================================ */
-@media (min-width: 768px) {
+@media (min-width: 720px) {
+    /* Padding-x 48 from Figma (overrides the section-wide
+       --navbar-padding-x-tablet: 40 used elsewhere). */
     .navbar__inner {
-        padding: var(--space-24) var(--navbar-padding-x-tablet);
+        padding: var(--space-24) var(--space-48);
     }
 
     .navbar__toggle,
@@ -79,37 +303,79 @@
 }
 
 /* ============================================
-   HERO — TABLET (≥768px)
-   - Bigger typography, more breathing room.
-   - Layout still stacked (image below copy).
+   HERO — TABLET (≥720px) — exact Figma 2474:886
+   - 80px gap navbar↔hero (padding-top)
+   - Heading 42 Medium, no eyebrow
+   - Stacked layout (image below copy + button)
+   - Button: rectangular pill (radius 32) with shadow
+   - Stats: 3 cols spread to ends (space-between)
    ============================================ */
-@media (min-width: 768px) {
+@media (min-width: 720px) {
     .hero {
-        padding: var(--space-64) var(--navbar-padding-x-tablet);
+        padding: var(--space-80) var(--navbar-padding-x-tablet) var(--space-64);
     }
 
     .hero__container {
-        gap: var(--space-48);
+        gap: var(--space-64);
     }
 
     .hero__row {
-        gap: var(--space-48);
+        gap: var(--space-64);
+    }
+
+    .hero__content {
+        gap: var(--space-56);
+    }
+
+    .hero__copy {
+        gap: var(--space-32);
+    }
+
+    /* Eyebrow not present in the tablet Figma composition.
+       Restored at desktop below. */
+    .hero__eyebrow {
+        display: none;
     }
 
     .hero__heading {
-        font-size: 40px;
+        font-size: 42px;
     }
 
     .hero__subtitle {
         font-size: var(--font-size-lg);
     }
 
+    /* Bumped from lg → xl to match Figma tablet for the
+       modes-card-presencial CTA (and aligns with desktop xl).
+       The hero override below still applies its own padding/
+       radius/shadow on top. */
     .btn-primary {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-xl);
+    }
+
+    /* Hero CTA: padding 12 24 + radius 32 + dark shadow.
+       Scoped to .hero so .modes-card--outline .btn-primary
+       and other instances stay on the base styling. */
+    .hero .btn-primary {
+        padding: var(--space-12) var(--space-24);
+        border-radius: 32px;
+        box-shadow: 1px 1px 4px 0 rgba(46, 46, 46, 1);
+        font-size: var(--font-size-xl);
+    }
+
+    .hero__image {
+        height: 445px;
+        aspect-ratio: auto;
     }
 
     .hero__stats {
+        justify-content: space-between;
+        flex-wrap: nowrap;
         gap: var(--space-40);
+    }
+
+    .hero__stats .stat {
+        flex: 0 0 auto;
     }
 
     /* Divider — wider side padding (128px Y inherited from base) */
@@ -117,17 +383,23 @@
         width: calc(100% - 2 * var(--navbar-padding-x-tablet));
     }
 
-    /* About Me — bigger typography, layout still stacked */
+    /* About Me — TABLET — exact Figma 2476:740
+       Layout still stacked (column). Gaps and typography
+       upgraded to match Figma tablet composition. */
     .about-me {
         padding: 0 var(--navbar-padding-x-tablet);
     }
 
     .about-me__container {
-        gap: var(--space-48);
+        gap: var(--space-64);
+    }
+
+    .about-me__content {
+        gap: var(--space-64);
     }
 
     .about-me__name {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .about-me__paragraph,
@@ -136,37 +408,51 @@
     }
 
     .btn-outline {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-xl);
+    }
+
+    /* IMG fixed height 648 per Figma (overrides aspect-ratio
+       1/1 from base). Desktop overrides this with height 100%
+       inside the 548×548 media frame, so no revert needed. */
+    .about-me__image {
+        aspect-ratio: auto;
+        height: 648px;
     }
 
     /* ============================================
-       MODES — TABLET
-       - Stack still column (548×2 + gap doesn't fit)
-       - Bigger card padding + scaled typography
+       MODES — TABLET — exact Figma 2476:800
+       - Stack column (cards under header)
+       - Heading 36, card title 26, padding 40
+       - Cards gap 31 (literal Figma value, off-scale)
        ============================================ */
     .modes {
         padding: 0 var(--navbar-padding-x-tablet);
     }
 
     .modes__container {
-        gap: var(--space-48);
+        gap: var(--space-64);
     }
 
     .modes__heading {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .modes__subtitle {
         font-size: var(--font-size-lg);
     }
 
+    /* Off-scale value from Figma — kept literal, not tokenized. */
+    .modes__cards {
+        gap: 31px;
+    }
+
     .modes-card {
-        padding: var(--space-32);
+        padding: var(--space-40);
         gap: var(--space-40);
     }
 
     .modes-card__title {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .modes-card__description {
@@ -178,7 +464,7 @@
     }
 
     .btn-cream {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-xl);
     }
 
     /* ============================================
@@ -190,55 +476,71 @@
     }
 
     .resources__container {
-        gap: var(--space-48);
+        gap: var(--space-64);
     }
 
     .resources__heading {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .resources__subtitle {
         font-size: var(--font-size-lg);
     }
 
-    /* Slider tablet: cards más amplias, 2 visibles a la vez */
+    /* Slider tablet — Figma 2476:863:
+       cards 347px fijos + gap 40 → 1 card visible
+       + ~77% peek de la siguiente. */
     .resources__cards {
-        gap: var(--space-24);
+        gap: var(--space-40);
     }
 
     .resources__cards .resource-card {
-        flex-basis: calc(50% - var(--space-24) / 2);
+        flex-basis: 347px;
     }
 
     /* ============================================
-       TESTIMONIALS — TABLET — Figma 2-col grid
+       TESTIMONIALS — TABLET — exact Figma 2476:910
+       - Single-column stack (cards full width)
+       - Subtitle hidden (Figma tablet only shows h2)
+       - All cards floor at 204px so short reviews
+         visually align with longer ones, matching the
+         Figma intent of equal-looking heights.
        ============================================ */
     .testimonials {
         padding: 0 var(--navbar-padding-x-tablet);
     }
 
     .testimonials__container {
-        gap: var(--space-56);
+        gap: var(--space-64);
     }
 
     .testimonials__heading {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .testimonials__subtitle {
+        display: none;
         font-size: var(--font-size-lg);
     }
 
     .testimonials__cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: var(--space-32);
+    }
+
+    .testimonial-card {
+        min-height: 204px;
     }
 
     /* ============================================
        START — TABLET — bigger gaps, 3-col cards
        ============================================ */
+    /* Tablet — exact Figma 2480:806:
+       - .start has NO padding-x → green box goes full-bleed
+       - .start__contact loses border-radius (edge-to-edge)
+       - Cards stack column with their own internal padding-x 48 */
     .start {
-        padding: 0 var(--navbar-padding-x-tablet);
+        padding: 0;
     }
 
     .start__container {
@@ -247,10 +549,11 @@
 
     .start__contact {
         gap: var(--space-48);
+        border-radius: 0;
     }
 
     .start__heading {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .start__description {
@@ -258,8 +561,9 @@
     }
 
     .start__cards {
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-24);
+        grid-template-columns: 1fr;
+        gap: var(--space-32);
+        padding: 0 var(--space-48);
     }
 
     .info-card {
@@ -267,12 +571,12 @@
     }
 
     /* ============================================
-       FOOTER — TABLET
-       - 3 columns side-by-side, gap 24
-       - Container gap follows Figma desktop (48)
+       FOOTER — TABLET — exact Figma 2482:842
+       - Padding 56 / 48 (literal 48 lateral)
+       - Top stacks COLUMN with gap 32 (vs desktop row)
        ============================================ */
     .footer {
-        padding: var(--space-48) var(--navbar-padding-x-tablet);
+        padding: var(--space-56) var(--space-48);
     }
 
     .footer__container {
@@ -280,10 +584,8 @@
     }
 
     .footer__top {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: var(--space-24);
+        flex-direction: column;
+        gap: var(--space-32);
     }
 }
 
@@ -344,6 +646,30 @@
 
     .stat__number {
         font-size: var(--font-size-2xl);
+    }
+
+    /* Reverts to preserve desktop visual after tablet
+       overrides (tablet rules cascade into ≥1024 by default).
+       Container gap intentionally NOT reverted — desktop now
+       inherits the tablet 64 to align with the rest of the
+       sections and Figma. */
+    .hero__copy {
+        gap: var(--space-24);
+    }
+
+    .hero__eyebrow {
+        display: flex;
+    }
+
+    .hero .btn-primary {
+        padding: var(--space-12);
+        border-radius: var(--radius-pill);
+        box-shadow: none;
+    }
+
+    .hero__stats {
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 
     /* Divider — full desktop side padding */
@@ -478,6 +804,19 @@
         font-size: 36px;
     }
 
+    /* Reverts to undo tablet-only changes. */
+    .testimonials__subtitle {
+        display: block;
+    }
+
+    .testimonials__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-card {
+        min-height: 0;
+    }
+
     /* ============================================
        START — DESKTOP — exact Figma
        - h2 36 Bold, cards row gap 80 (1120 - 3*320 = 160 / 2)
@@ -486,12 +825,20 @@
         padding: 0 var(--navbar-padding-x-desktop);
     }
 
+    /* Reverts to undo tablet-only changes that would otherwise
+       cascade into desktop. */
+    .start__contact {
+        border-radius: var(--radius-lg);
+    }
+
     .start__heading {
         font-size: 36px;
     }
 
     .start__cards {
+        grid-template-columns: repeat(3, 1fr);
         gap: var(--space-80);
+        padding: 0;
     }
 
     /* ============================================
@@ -499,5 +846,14 @@
        ============================================ */
     .footer {
         padding: var(--space-56) var(--navbar-padding-x-desktop);
+    }
+
+    /* Revert: tablet stacks the top container in column,
+       desktop returns to a 3-col row with space-between. */
+    .footer__top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: var(--space-24);
     }
 }
