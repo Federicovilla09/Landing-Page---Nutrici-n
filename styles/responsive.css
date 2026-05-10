@@ -16,7 +16,17 @@
    - Pills come back at desktop (≥1024)
    ============================================ */
 @media (max-width: 720px) {
-    /* NAVBAR — MOBILE */
+    /* NAVBAR — MOBILE
+       Disable the glass backdrop-filter on mobile: it
+       creates a containing block that traps the floating
+       .btn-cta inside the navbar instead of letting it
+       anchor to the viewport's bottom. */
+    .navbar {
+        background-color: var(--neutral-100);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
     .navbar__links,
     .hamburger {
         display: none;
