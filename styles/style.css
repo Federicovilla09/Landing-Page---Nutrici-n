@@ -12,6 +12,10 @@
 html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    /* Pair with body's clip below — covers cases where some
+       browsers let a child spill at the <html> level even when
+       <body> is clipped. */
+    overflow-x: clip;
 }
 
 body {
@@ -22,9 +26,8 @@ body {
     background-color: var(--neutral-100);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Prevent accidental horizontal page scroll. `clip` instead
-       of `hidden` so it doesn't create a new scroll container
-       that would break the navbar's position: sticky. */
+    width: 100%;
+    max-width: 100%;
     overflow-x: clip;
 }
 
@@ -62,6 +65,19 @@ button {
     width: 100%;
     background-color: var(--neutral-100);
     box-shadow: var(--shadow-navbar);
+}
+
+/* Premium glass effect: translucent navbar with soft backdrop
+   blur. Wrapped in @supports so browsers without backdrop-filter
+   keep the solid white bg above (no legibility loss). */
+@supports (
+    (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.78);
+        -webkit-backdrop-filter: saturate(120%) blur(12px);
+        backdrop-filter: saturate(120%) blur(12px);
+    }
 }
 
 .navbar__inner {
@@ -137,13 +153,11 @@ button {
     display: none;
 }
 
-/* ============================================
-   HERO LAYOUT
-   ============================================ */
+/* HERO LAYOUT */
 .hero {
     width: 100%;
     padding:var(--navbar-padding-x-mobile);
-    margin-top: var(--space-80);
+    margin-top: 64px;
 }
 
 .hero__container {
@@ -755,6 +769,10 @@ button {
 
 .footer__cta-link:hover .footer__cta-link__icon {
     transform: translate(2px, -2px);
+}
+
+.footer__cta-link:active {
+    transform: scale(0.97);
 }
 
 .footer__cta-link:focus-visible {

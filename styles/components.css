@@ -1,6 +1,4 @@
-/* ============================================
-   NAV PILL (links)
-   ============================================ */
+/* NAV PILL (links) */
 .nav-pill {
     display: inline-flex;
     align-items: center;
@@ -17,11 +15,16 @@
     background-color: transparent;
     transition:
         background-color var(--transition-fast),
-        color var(--transition-fast);
+        color var(--transition-fast),
+        transform var(--transition-fast);
 }
 
 .nav-pill:hover {
     background-color: var(--neutral-200);
+}
+
+.nav-pill:active {
+    transform: scale(0.97);
 }
 
 .nav-pill:focus-visible {
@@ -34,9 +37,7 @@
     font-weight: var(--font-weight-medium);
 }
 
-/* ============================================
-   CTA BUTTON
-   ============================================ */
+/* CTA BUTTON */
 .btn-cta {
     display: inline-flex;
     align-items: center;
@@ -62,7 +63,7 @@
 }
 
 .btn-cta:active {
-    transform: translateY(1px);
+    transform: scale(0.97);
 }
 
 .btn-cta:focus-visible {
@@ -76,6 +77,28 @@
     border-radius: var(--radius-pill);
     background-color: var(--accent-primary-fg);
     flex-shrink: 0;
+    animation: btn-cta-dot-pulse 2s ease-in-out infinite;
+}
+
+/* Subtle continuous pulse for the floating CTA dot.
+   transform + opacity are GPU-friendly and don't reflow. */
+@keyframes btn-cta-dot-pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.35);
+        opacity: 0.7;
+    }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+    .btn-cta__dot {
+        animation: none;
+    }
 }
 
 /* ============================================
@@ -106,7 +129,7 @@
 }
 
 .btn-primary:active {
-    transform: translateY(1px);
+    transform: scale(0.97);
 }
 
 .btn-primary:focus-visible {
@@ -149,7 +172,7 @@
 }
 
 .btn-outline:active {
-    transform: translateY(1px);
+    transform: scale(0.97);
 }
 
 .btn-outline:focus-visible {
@@ -189,7 +212,7 @@
 }
 
 .btn-cream:active {
-    transform: translateY(1px);
+    transform: scale(0.97);
 }
 
 .btn-cream:focus-visible {
@@ -417,7 +440,7 @@
 }
 
 .download-link:active {
-    transform: translateY(1px);
+    transform: scale(0.97);
 }
 
 .download-link:focus-visible {
@@ -600,4 +623,56 @@
 
 .navbar__toggle-input:checked ~ .navbar__inner .hamburger__bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================
+   ON-SCROLL REVEAL ANIMATIONS
+   Minimal, premium fade-up system. Elements opt in
+   via .reveal; JS adds .is-visible on intersection.
+   After the animation completes, JS removes the
+   .reveal classes so they don't slow button hover/
+   press transitions afterwards.
+   ============================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+/* Image variant — softer reveal: slight scale, no translate. */
+.reveal.reveal--image {
+    transform: scale(0.98);
+}
+
+/* Divider variant — horizontal grow, subtle. */
+.reveal.reveal--divider {
+    transform: scaleX(0.85);
+    transform-origin: center;
+}
+
+/* CTA Final — slower for more presence. */
+.reveal.reveal--cta {
+    transition-duration: 900ms;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Stagger direct children of .reveal-group (up to 4). */
+.reveal-group > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-group > .reveal:nth-child(2) { transition-delay: 80ms; }
+.reveal-group > .reveal:nth-child(3) { transition-delay: 160ms; }
+.reveal-group > .reveal:nth-child(4) { transition-delay: 240ms; }
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }

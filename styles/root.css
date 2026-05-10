@@ -1,7 +1,5 @@
 :root {
-    /* ============================================
-       NEUTRAL SCALE
-       ============================================ */
+    /* NEUTRAL SCALE */
     --neutral-100: #ffffff;
     --neutral-200: #f5f5f5;
     --neutral-300: #e5e5e5;
@@ -13,12 +11,7 @@
     --neutral-800: #2e2e2e;
     --neutral-900: #0b1510;
 
-    /* ============================================
-       BRAND PLACEHOLDERS
-       TODO: replace once brand palette is defined.
-       Pulled directly from Figma 2437:835 to match
-       the design 1:1 in the meantime.
-       ============================================ */
+    /* BRAND */
     --accent-primary: #b85c3d;
     --accent-primary-fg: var(--neutral-100);
     --brand-logo: #284f3c;
@@ -29,9 +22,7 @@
     --divider-color: #0d656c;
     --shadow-warm: rgba(235, 232, 220, 1);
 
-    /* ============================================
-       SPACING
-       ============================================ */
+    /* SPACING */
     --space-2: 2px;
     --space-4: 4px;
     --space-6: 6px;
@@ -49,9 +40,7 @@
     --space-128: 128px;
     --space-160: 160px;
 
-    /* ============================================
-       TYPOGRAPHY
-       ============================================ */
+    /* TYPOGRAPHY */
     --font-family-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
 
     --font-size-xs: 12px;
@@ -74,32 +63,24 @@
     --letter-spacing-normal: 0.057em;
     --letter-spacing-wide: 0.067em;
 
-    /* ============================================
-       BORDER-RADIUS
-       ============================================ */
+    /* BORDER-RADIUS */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-pill: 9999px;
 
-    /* ============================================
-       SHADOWS
-       ============================================ */
+    /* SHADOWS */
     --shadow-navbar: 0 4px 4px 0 var(--shadow-warm);
     --shadow-image: 1px 1px 8px 0 rgba(75, 72, 72, 1);
     --shadow-card: 1px 1px 8px 0 var(--shadow-warm);
     --shadow-testimonial: 1px 1px 4px 0 rgba(18, 130, 139, 1);
 
-    /* ============================================
-       TRANSITIONS
-       ============================================ */
+    /* TRANSITIONS */
     --transition-fast: 150ms ease-out;
     --transition-base: 200ms ease-out;
     --transition-slow: 300ms ease-out;
 
-    /* ============================================
-       LAYOUT
-       ============================================ */
+    /* LAYOUT */
     --container-max: 1280px;
     --container-content: 1120px;
     --navbar-padding-x-mobile: var(--space-16);
