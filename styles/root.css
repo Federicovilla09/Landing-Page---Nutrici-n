@@ -79,6 +79,9 @@
     --shadow-card: 1px 1px 8px 0 var(--shadow-warm);
     --shadow-testimonial: 1px 1px 4px 0 rgba(18, 130, 139, 1);
     --shadow-button: 1px 1px 4px 0 rgba(46, 46, 46, 1);
+    --shadow-cta: 0 1px 2px 0 rgba(11, 21, 16, 0.08), 0 4px 12px 0 rgba(11, 21, 16, 0.10);
+    --shadow-cta-hover: 0 2px 4px 0 rgba(11, 21, 16, 0.10), 0 8px 18px 0 rgba(11, 21, 16, 0.14);
+    --shadow-cta-active: 0 1px 2px 0 rgba(11, 21, 16, 0.08), 0 2px 6px 0 rgba(11, 21, 16, 0.08);
 
     /* TRANSITIONS */
     --transition-fast: 150ms ease-out;

@@ -183,7 +183,6 @@ button {
 
 .hero__eyebrow {
     display: flex;
-    gap: var(--space-8);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-relaxed);
@@ -276,7 +275,6 @@ button {
 .about-me__eyebrow {
     display: flex;
     align-items: center;
-    gap: var(--space-8);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-relaxed);
@@ -375,7 +373,6 @@ button {
 .modes__eyebrow {
     display: flex;
     align-items: center;
-    gap: var(--space-8);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-relaxed);
@@ -441,7 +438,6 @@ button {
 .resources__eyebrow {
     display: flex;
     align-items: center;
-    gap: var(--space-8);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-relaxed);
@@ -529,7 +525,6 @@ button {
 .testimonials__eyebrow {
     display: flex;
     align-items: center;
-    gap: var(--space-8);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-relaxed);
@@ -618,12 +613,14 @@ button {
     justify-content: center;
     align-items: center;
     align-self: self-start;
-    gap: var(--space-8);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-relaxed);
     letter-spacing: var(--letter-spacing-normal);
     color: var(--neutral-100);
+    padding: 8px 12px;
+    background-color:var(--brand-dark);
+    border-radius: 999px;
 }
 
 .start__eyebrow-icon {

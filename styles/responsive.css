@@ -82,7 +82,7 @@
     }
 
     .hero__heading {
-        font-size: var(--font-size-display-sm);
+        font-size: var(--font-size-2xl);
         letter-spacing: 0.031em;
     }
 
