@@ -75,6 +75,13 @@
     outline-offset: 3px;
 }
 
+/* Mobile-only persistent CTA, lives at <body> level so the
+   navbar's backdrop-filter (containing-block trap) does not
+   anchor it to the navbar. Shown only at <720px. */
+.btn-cta--floating {
+    display: none;
+}
+
 .btn-cta__dot {
     width: 6px;
     height: 6px;

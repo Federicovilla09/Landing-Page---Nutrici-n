@@ -17,16 +17,10 @@
    ============================================ */
 @media (max-width: 720px) {
     /* NAVBAR — MOBILE
-       Disable the glass backdrop-filter on mobile: it
-       creates a containing block that traps the floating
-       .btn-cta inside the navbar instead of letting it
-       anchor to the viewport's bottom. */
-    .navbar {
-        background-color: var(--neutral-100);
-        -webkit-backdrop-filter: none;
-        backdrop-filter: none;
-    }
-
+       Glass effect now stays on at mobile (inherited from the
+       @supports block in style.css). The floating CTA was moved
+       to <body> level to escape the backdrop-filter containing
+       block, so the trap is gone. */
     .navbar__links {
         display: none;
     }
@@ -44,8 +38,15 @@
         color: var(--brand-dark);
     }
 
+    /* Hide the in-navbar CTA on mobile — the floating gemini
+       takes over as the persistent mobile action. */
+    .navbar .btn-cta {
+        display: none;
+    }
+
     /* FLOATING CTA — MOBILE */
-    .btn-cta {
+    .btn-cta--floating {
+        display: inline-flex;
         position: fixed;
         bottom: calc(var(--space-48) + env(safe-area-inset-bottom, 0px));
         right: var(--space-16);
