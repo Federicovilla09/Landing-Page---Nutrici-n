@@ -1,947 +1,697 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>María Florencia Brondi · Lic. en Nutrición</title>
 
-    <link rel="stylesheet" href="styles/root.css" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/components.css" />
-    <link rel="stylesheet" href="styles/responsive.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>María Florencia Brondi · Lic. en Nutrición</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <link rel="stylesheet" href="styles/root.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
 
-  <body>
-    <header class="navbar">
-      <input
-        type="checkbox"
-        id="nav-toggle"
-        class="navbar__toggle-input"
-        aria-hidden="true"
-        tabindex="-1"
-      />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
 
-      <div class="navbar__inner">
-        <a href="#inicio" class="navbar__brand" aria-label="María Florencia Brondi - Inicio">
-          <svg
-            class="navbar__logo"
-            viewBox="0 0 40 34"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              d="M17.5847 0.32074L39.2801 22.0266V33.6792H29.1555V26.2155L13.3979 10.4501H10.1245V33.6792H0V0.32074H17.5847ZM29.1555 11.8972V0.32074H39.2801V11.8972H29.1555Z"
-              fill="currentColor"
-            />
-          </svg>
+<body>
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="#inicio" class="navbar__brand" aria-label="María Florencia Brondi - Inicio">
+        <svg class="navbar__logo" viewBox="0 0 40 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+          focusable="false">
+          <path
+            d="M17.5847 0.32074L39.2801 22.0266V33.6792H29.1555V26.2155L13.3979 10.4501H10.1245V33.6792H0V0.32074H17.5847ZM29.1555 11.8972V0.32074H39.2801V11.8972H29.1555Z"
+            fill="currentColor" />
+        </svg>
 
-          <span class="navbar__info">
-            <span class="navbar__name">María Florencia Brondi</span>
-            <span class="navbar__title">Lic. en Nutrición - MN 12.345</span>
-          </span>
+        <span class="navbar__info">
+          <span class="navbar__name">María Florencia Brondi</span>
+          <span class="navbar__title">Lic. en Nutrición - MN 12.345</span>
+        </span>
+      </a>
+
+      <nav class="navbar__menu" aria-label="Navegación principal">
+        <ul class="navbar__links">
+          <li><a class="nav-pill" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="nav-pill" href="#consultas">Consultas</a></li>
+          <li><a class="nav-pill" href="#recursos">Recursos</a></li>
+          <li><a class="nav-pill" href="#testimonios">Testimonios</a></li>
+        </ul>
+
+        <a class="btn-cta" href="#reservar">
+          <span class="btn-cta__dot" aria-hidden="true"></span>
+          Reservar turno
         </a>
+      </nav>
+    </div>
+  </header>
 
-        <label
-          for="nav-toggle"
-          class="navbar__toggle hamburger"
-          aria-label="Abrir menú"
-        >
-          <span class="hamburger__bar" aria-hidden="true"></span>
-          <span class="hamburger__bar" aria-hidden="true"></span>
-          <span class="hamburger__bar" aria-hidden="true"></span>
-        </label>
-
-        <nav class="navbar__menu" aria-label="Navegación principal">
-          <ul class="navbar__links">
-            <li><a class="nav-pill" href="#sobre-mi">Sobre mí</a></li>
-            <li><a class="nav-pill" href="#consultas">Consultas</a></li>
-            <li><a class="nav-pill" href="#recursos">Recursos</a></li>
-            <li><a class="nav-pill" href="#testimonios">Testimonios</a></li>
-          </ul>
-
-          <a class="btn-cta" href="#reservar">
-            <span class="btn-cta__dot" aria-hidden="true"></span>
-            Reservar turno
-          </a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero" id="inicio" aria-labelledby="hero-heading">
-        <div class="hero__container">
-          <div class="hero__row">
-            <div class="hero__content">
-              <div class="hero__copy reveal-group">
-                <p class="hero__eyebrow reveal">
-                  <svg
-                    class="hero__eyebrow-icon"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <circle cx="12.1" cy="12.1" r="1" />
-                  </svg>
-                  <span>ATENCIÓN ONLINE Y PRESENCIAL - ARGENTINA Y EXTERIOR</span>
-                </p>
-
-                <h1 id="hero-heading" class="hero__heading reveal">
-                  Nutrición pensada para
-                  <span class="hero__heading-accent">acompañarte</span>,<br />
-                  no para exigirte
-                </h1>
-
-                <p class="hero__subtitle reveal">
-                  Un espacio para trabajar tu relación con la comida desde el
-                  cuidado, el respeto y la escucha.
-                </p>
-              </div>
-
-              <a class="btn-primary btn-primary--block reveal" href="#reservar">
-                Conocé cómo puedo ayudarte
-              </a>
-            </div>
-
-            <img
-              class="hero__image reveal reveal--image"
-              src="assets/hero/hero-image.png"
-              alt="Lic. María Florencia Brondi acompañando a una paciente en consulta nutricional"
-              width="548"
-              height="443"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
-
-          <div class="hero__stats reveal-group" role="list">
-            <div class="stat reveal" role="listitem">
-              <span class="stat__number">+8</span>
-              <span class="stat__label">años de experiencia</span>
-            </div>
-            <div class="stat reveal" role="listitem">
-              <span class="stat__number">+200</span>
-              <span class="stat__label">pacientes acompañados</span>
-            </div>
-            <div class="stat reveal" role="listitem">
-              <span class="stat__number">100%</span>
-              <span class="stat__label">enfoque personalizado</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <hr class="divider reveal reveal--divider" />
-
-      <section class="about-me" id="sobre-mi" aria-labelledby="about-me-heading">
-        <div class="about-me__container">
-          <div class="about-me__content">
-            <div class="about-me__title reveal-group">
-              <p class="about-me__eyebrow reveal">
-                <svg
-                  class="about-me__eyebrow-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                  focusable="false"
-                >
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-heading">
+      <div class="hero__container">
+        <div class="hero__row">
+          <div class="hero__content">
+            <div class="hero__copy reveal-group">
+              <p class="hero__eyebrow reveal">
+                <svg class="hero__eyebrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
                   <circle cx="12.1" cy="12.1" r="1" />
                 </svg>
-                <span>SOBRE MÍ</span>
+                <span>ATENCIÓN ONLINE Y PRESENCIAL - ARGENTINA Y EXTERIOR</span>
               </p>
 
-              <div class="about-me__heading reveal">
-                <h2 id="about-me-heading" class="about-me__name">
-                  María Florencia Brondi
-                </h2>
-                <p class="about-me__subtitle">
-                  Licenciada en Nutrición · Enfoque integral y consciente
-                </p>
-              </div>
+              <h1 id="hero-heading" class="hero__heading reveal">
+                Nutrición pensada para
+                <span class="hero__heading-accent">acompañarte</span>,<br />
+                no para exigirte
+              </h1>
 
-              <div class="about-me__description reveal">
-                <p class="about-me__paragraph">
-                  Acompaño a personas que buscan mejorar su relación con la
-                  comida y recuperar bienestar desde un enfoque integral,
-                  especialmente cuando atraviesan ansiedad, inflamación o
-                  frustración después de intentar distintos métodos sin
-                  resultados sostenibles.
-                </p>
-
-                <ul class="about-me__features">
-                  <li class="feature-item">
-                    <svg
-                      class="feature-item__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                    <span class="feature-item__text">
-                      Acompañamiento profesional sin dietas estrictas
-                    </span>
-                  </li>
-                  <li class="feature-item">
-                    <svg
-                      class="feature-item__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                    <span class="feature-item__text">
-                      Enfoque integral y adaptado a cada persona
-                    </span>
-                  </li>
-                  <li class="feature-item">
-                    <svg
-                      class="feature-item__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                    <span class="feature-item__text">
-                      Trabajo sobre hábitos sostenibles y vida real
-                    </span>
-                  </li>
-                  <li class="feature-item">
-                    <svg
-                      class="feature-item__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                    <span class="feature-item__text">
-                      Espacio de escucha, respeto y procesos saludables
-                    </span>
-                  </li>
-                </ul>
-              </div>
+              <p class="hero__subtitle reveal">
+                Un espacio para trabajar tu relación con la comida desde el
+                cuidado, el respeto y la escucha.
+              </p>
             </div>
 
-            <a class="btn-outline btn-outline--block reveal" href="#reservar">
+            <a class="btn-primary btn-primary--block reveal" href="#reservar">
               Conocé cómo puedo ayudarte
             </a>
           </div>
 
-          <figure class="about-me__media reveal reveal--image">
-            <img
-              class="about-me__image"
-              src="assets/about/about-image.png"
-              alt="Lic. María Florencia Brondi, nutricionista"
-              width="548"
-              height="548"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-        </div>
-      </section>
-
-      <hr class="divider reveal reveal--divider" />
-
-      <section class="modes" id="consultas" aria-labelledby="modes-heading">
-        <div class="modes__container">
-          <header class="modes__header reveal-group">
-            <p class="modes__eyebrow reveal">
-              <svg
-                class="modes__eyebrow-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <circle cx="12.1" cy="12.1" r="1" />
-              </svg>
-              <span>MODALIDADES</span>
-            </p>
-
-            <h2 id="modes-heading" class="modes__heading reveal">
-              Elegí cómo querés empezar
-            </h2>
-
-            <p class="modes__subtitle reveal">
-              Dos formas de trabajar, según tu ritmo y disponibilidad.
-            </p>
-          </header>
-
-          <div class="modes__cards reveal-group">
-            <article
-              class="modes-card modes-card--filled reveal"
-              aria-labelledby="card-online-title"
-            >
-              <div class="modes-card__content">
-                <h3 id="card-online-title" class="modes-card__title">
-                  Consultas Online
-                </h3>
-                <p class="modes-card__description">
-                  Atendé desde cualquier parte del mundo. Ideal si estás en el
-                  exterior o preferís la comodidad de tu hogar.
-                </p>
-                <ul class="modes-card__features">
-                  <li class="feature-item">
-                    <svg
-                      class="feature-item__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                    <span class="feature-item__text">
-                      Videollamada de 50 minutos
-                    </span>
-                  </li>
-                  <li class="feature-item">
-                    <svg
-                      class="feature-item__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                    <span class="feature-item__text">Plan personalizado</span>
-                  </li>
-                  <li class="feature-item">
-                    <svg
-                      class="feature-item__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                    <span class="feature-item__text">
-                      Seguimiento personalizado
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              <footer class="modes-card__footer">
-                <a
-                  class="btn-cream btn-cream--block"
-                  href="https://wa.me/5491155556666"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Contactar por WhatsApp
-                </a>
-                <p class="modes-card__phone">+54 9 11 5555-6666</p>
-              </footer>
-            </article>
-
-            <article
-              class="modes-card modes-card--outline reveal"
-              aria-labelledby="card-presencial-title"
-            >
-              <div class="modes-card__content">
-                <h3 id="card-presencial-title" class="modes-card__title">
-                  Consultas Presenciales
-                </h3>
-                <p class="modes-card__description">
-                  Encuentros en consultorio, un espacio cuidado y tranquilo,
-                  pensado para vos.
-                </p>
-                <ul class="modes-card__features">
-                  <li class="feature-item">
-                    <svg
-                      class="feature-item__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                    <span class="feature-item__text">
-                      Sesión presencial de 50 minutos
-                    </span>
-                  </li>
-                  <li class="feature-item">
-                    <svg
-                      class="feature-item__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                    <span class="feature-item__text">
-                      Mediciones y composición corporal
-                    </span>
-                  </li>
-                  <li class="feature-item">
-                    <svg
-                      class="feature-item__icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <circle cx="12.1" cy="12.1" r="1" />
-                    </svg>
-                    <span class="feature-item__text">
-                      Disponibilidad mañana y tarde
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              <footer class="modes-card__footer">
-                <a class="btn-primary btn-primary--block" href="#reservar">
-                  Reservar turno presencial
-                </a>
-                <p class="modes-card__phone">+54 9 11 5555-6666</p>
-              </footer>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <hr class="divider reveal reveal--divider" />
-
-      <section class="resources" id="recursos" aria-labelledby="resources-heading">
-        <div class="resources__container">
-          <header class="resources__header reveal-group">
-            <p class="resources__eyebrow reveal">
-              <svg
-                class="resources__eyebrow-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <circle cx="12.1" cy="12.1" r="1" />
-              </svg>
-              <span>MATERIAL GRATUITO</span>
-            </p>
-
-            <h2 id="resources-heading" class="resources__heading reveal">
-              Recursos para acompañarte fuera de la consulta
-            </h2>
-
-            <p class="resources__subtitle reveal">
-              Materiales pensados para ayudarte a organizarte, reflexionar y
-              dar pasos en tu día a día.
-            </p>
-          </header>
-
-          <div class="resources__cards reveal-group">
-            <article
-              class="resource-card reveal"
-              aria-labelledby="resource-card-1-title"
-            >
-              <div class="resource-card__media" aria-hidden="true">
-                <span class="resource-card__media-placeholder">Imagen</span>
-                <!-- Future image goes here:
-                  <img class="resource-card__image" src="..." alt="..." /> -->
-              </div>
-              <div class="resource-card__body">
-                <div class="resource-card__text">
-                  <h3
-                    id="resource-card-1-title"
-                    class="resource-card__title"
-                  >
-                    Guía para organizar tus comidas
-                  </h3>
-                  <p class="resource-card__description">
-                    Una herramienta simple para planificar la semana sin caer
-                    en la rigidez.
-                  </p>
-                </div>
-                <a class="download-link" href="#" download>
-                  <span class="download-link__text">Descargar recurso</span>
-                  <svg
-                    class="download-link__icon"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article
-              class="resource-card reveal"
-              aria-labelledby="resource-card-2-title"
-            >
-              <div class="resource-card__media" aria-hidden="true">
-                <span class="resource-card__media-placeholder">Imagen</span>
-              </div>
-              <div class="resource-card__body">
-                <div class="resource-card__text">
-                  <h3
-                    id="resource-card-2-title"
-                    class="resource-card__title"
-                  >
-                    Planificador semanal
-                  </h3>
-                  <p class="resource-card__description">
-                    Visualizá tus comidas y reducí el estrés diario al pensar
-                    qué cocinar.
-                  </p>
-                </div>
-                <a class="download-link" href="#" download>
-                  <span class="download-link__text">Descargar recurso</span>
-                  <svg
-                    class="download-link__icon"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article
-              class="resource-card reveal"
-              aria-labelledby="resource-card-3-title"
-            >
-              <div class="resource-card__media" aria-hidden="true">
-                <span class="resource-card__media-placeholder">Imagen</span>
-              </div>
-              <div class="resource-card__body">
-                <div class="resource-card__text">
-                  <h3
-                    id="resource-card-3-title"
-                    class="resource-card__title"
-                  >
-                    Hábitos alimentarios concientes
-                  </h3>
-                  <p class="resource-card__description">
-                    Ejercicios prácticos para conectar con tu cuerpo y tus
-                    señales.
-                  </p>
-                </div>
-                <a class="download-link" href="#" download>
-                  <span class="download-link__text">Descargar recurso</span>
-                  <svg
-                    class="download-link__icon"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <hr class="divider reveal reveal--divider" />
-
-      <section class="testimonials" id="testimonios" aria-labelledby="testimonials-heading">
-        <svg
-          class="testimonials__sprite"
-          aria-hidden="true"
-          focusable="false"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <symbol id="icon-star" viewBox="0 0 24 24">
-            <polygon
-              fill="currentColor"
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-            />
-          </symbol>
-        </svg>
-
-        <div class="testimonials__container">
-          <header class="testimonials__header reveal-group">
-            <p class="testimonials__eyebrow reveal">
-              <svg
-                class="testimonials__eyebrow-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <circle cx="12.1" cy="12.1" r="1" />
-              </svg>
-              <span>TESTIMONIOS</span>
-            </p>
-
-            <h2 id="testimonials-heading" class="testimonials__heading reveal">
-              Experiencias de quienes ya empezaron
-            </h2>
-
-            <p class="testimonials__subtitle reveal">
-              Materiales pensados para ayudarte a organizarte, reflexionar y
-              dar pasos en tu día a día.
-            </p>
-          </header>
-
-          <div class="testimonials__cards reveal-group">
-            <article class="testimonial-card reveal">
-              <header class="testimonial-card__header">
-                <p class="testimonial-card__name">Judith R</p>
-                <span
-                  class="testimonial-card__rating"
-                  role="img"
-                  aria-label="5 de 5 estrellas"
-                >
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                </span>
-              </header>
-              <blockquote class="testimonial-card__text">Una gran profesional, me atendió con mucha calidez y empatía.
-Me acompañó y orientó en la adquisición de nuevos hábitos alimenticios.
-Gracias a ella, llegué a mi objetivo.</blockquote>
-            </article>
-
-            <article class="testimonial-card reveal">
-              <header class="testimonial-card__header">
-                <p class="testimonial-card__name">Damaris L</p>
-                <span
-                  class="testimonial-card__rating"
-                  role="img"
-                  aria-label="5 de 5 estrellas"
-                >
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                </span>
-              </header>
-              <blockquote class="testimonial-card__text">La elijo hace más de 7 años, su amor por su trabajo y por enseñarnos hábitos saludables para la vida desde el amor de nuestros cuerpo y sobre todo la salud.
-Una gran profesional.</blockquote>
-            </article>
-
-            <article class="testimonial-card reveal">
-              <header class="testimonial-card__header">
-                <p class="testimonial-card__name">Vero H</p>
-                <span
-                  class="testimonial-card__rating"
-                  role="img"
-                  aria-label="5 de 5 estrellas"
-                >
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                </span>
-              </header>
-              <blockquote class="testimonial-card__text">La mejor ❤️❤️ Gracias por todo, por orientarnos y ayudarnos en nuestra alimentación 🫶🏻.</blockquote>
-            </article>
-
-            <article class="testimonial-card reveal">
-              <header class="testimonial-card__header">
-                <p class="testimonial-card__name">Anahí R</p>
-                <span
-                  class="testimonial-card__rating"
-                  role="img"
-                  aria-label="5 de 5 estrellas"
-                >
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                  <svg class="testimonial-card__star" aria-hidden="true" focusable="false"><use href="#icon-star" /></svg>
-                </span>
-              </header>
-              <blockquote class="testimonial-card__text">Excelente profesional !!!</blockquote>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <hr class="divider reveal reveal--divider" />
-
-      <section class="start" id="reservar" aria-labelledby="start-heading">
-        <div class="start__container">
-          <div class="start__contact reveal reveal--cta">
-            <p class="start__eyebrow">
-              <svg
-                class="start__eyebrow-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <circle cx="12.1" cy="12.1" r="1" />
-              </svg>
-              <span>EMPEZA HOY</span>
-            </p>
-
-            <h2 id="start-heading" class="start__heading">
-              Si sentís que es momento<br />
-              de empezar, estoy acá.
-            </h2>
-
-            <p class="start__description">
-              Trabajaremos para que vuelvas a relacionarte con la comida desde
-              el cuidado y la confianza, a tu tiempo y a tu manera.
-            </p>
-
-            <a
-              class="btn-cream"
-              href="https://wa.me/5491155556666"
-              target="_blank"
-              rel="noopener"
-            >
-              Contactar por WhatsApp
-            </a>
-          </div>
-
-          <div class="start__cards reveal-group">
-            <article class="info-card reveal">
-              <header class="info-card__header">
-                <svg
-                  class="info-card__icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <h3 class="info-card__title">Modalidades</h3>
-              </header>
-              <p class="info-card__description">
-                Atención online.<br />Presencial en Tabossi E.R
-              </p>
-            </article>
-
-            <article class="info-card reveal">
-              <header class="info-card__header">
-                <svg
-                  class="info-card__icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-                <h3 class="info-card__title">Horarios</h3>
-              </header>
-              <p class="info-card__description">
-                Horarios flexibles y<br />coordinado previamente
-              </p>
-            </article>
-
-            <article class="info-card reveal">
-              <header class="info-card__header">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-dollar-sign-icon lucide-circle-dollar-sign"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
-                <h3 class="info-card__title">Formas de pago</h3>
-              </header>
-              <p class="info-card__description">
-                Efectivo - Transferencias - Mercado Pago
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer__container">
-        <div class="footer__top">
-          <div class="footer__brand">
-            <p class="footer__name">María Florencia Brondi</p>
-            <p class="footer__role">Licenciada en Nutrición</p>
-          </div>
-
-          <address class="footer__contact">
-            <p class="footer__col-label">CONTACTO</p>
-            <p class="footer__contact-line">
-              <a href="tel:+5491112345678">+54 9 11 1234-5678</a>
-            </p>
-            <p class="footer__contact-line">
-              <a href="mailto:contacto@nutricion.com">contacto@nutricion.com</a>
-            </p>
-          </address>
-
-          <div class="footer__location">
-            <p class="footer__col-label">UBICACIÓN</p>
-            <p class="footer__location-line">Tabossi - Entre Ríos</p>
-            <a
-              class="footer__cta-link"
-              href="https://www.google.com/maps/search/?api=1&amp;query=Tabossi%2C+Entre+R%C3%ADos%2C+Argentina"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Ver consultorio en Google Maps (abre en nueva pestaña)"
-            >
-              <span>Ver consultorio</span>
-              <svg
-                class="footer__cta-link__icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </a>
-          </div>
+          <img class="hero__image reveal reveal--image" src="assets/hero/hero-image.png"
+            alt="Lic. María Florencia Brondi acompañando a una paciente en consulta nutricional" width="548"
+            height="443" loading="eager" decoding="async" />
         </div>
 
-        <hr class="footer__line" />
-
-        <div class="footer__bottom">
-          <small class="footer__copyright">
-            © Federico Villanueva | Product Designer - Todos los derechos reservados.
-          </small>
+        <div class="hero__stats reveal-group" role="list">
+          <div class="stat reveal" role="listitem">
+            <span class="stat__number">+8</span>
+            <span class="stat__label">años de experiencia</span>
+          </div>
+          <div class="stat reveal" role="listitem">
+            <span class="stat__number">+200</span>
+            <span class="stat__label">pacientes acompañados</span>
+          </div>
+          <div class="stat reveal" role="listitem">
+            <span class="stat__number">100%</span>
+            <span class="stat__label">enfoque personalizado</span>
+          </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="./Js/main.js"></script>
-  </body>
+    <hr class="divider reveal reveal--divider" />
+
+    <section class="about-me" id="sobre-mi" aria-labelledby="about-me-heading">
+      <div class="about-me__container">
+        <div class="about-me__content">
+          <div class="about-me__title reveal-group">
+            <p class="about-me__eyebrow reveal">
+              <svg class="about-me__eyebrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                focusable="false">
+                <circle cx="12.1" cy="12.1" r="1" />
+              </svg>
+              <span>SOBRE MÍ</span>
+            </p>
+
+            <div class="about-me__heading reveal">
+              <h2 id="about-me-heading" class="about-me__name">
+                María Florencia Brondi
+              </h2>
+              <p class="about-me__subtitle">
+                Licenciada en Nutrición · Enfoque integral y consciente
+              </p>
+            </div>
+
+            <div class="about-me__description reveal">
+              <p class="about-me__paragraph">
+                Acompaño a personas que buscan mejorar su relación con la
+                comida y recuperar bienestar desde un enfoque integral,
+                especialmente cuando atraviesan ansiedad, inflamación o
+                frustración después de intentar distintos métodos sin
+                resultados sostenibles.
+              </p>
+
+              <ul class="about-me__features">
+                <li class="feature-item">
+                  <svg class="feature-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="12.1" cy="12.1" r="1" />
+                  </svg>
+                  <span class="feature-item__text">
+                    Acompañamiento profesional sin dietas estrictas
+                  </span>
+                </li>
+                <li class="feature-item">
+                  <svg class="feature-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="12.1" cy="12.1" r="1" />
+                  </svg>
+                  <span class="feature-item__text">
+                    Enfoque integral y adaptado a cada persona
+                  </span>
+                </li>
+                <li class="feature-item">
+                  <svg class="feature-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="12.1" cy="12.1" r="1" />
+                  </svg>
+                  <span class="feature-item__text">
+                    Trabajo sobre hábitos sostenibles y vida real
+                  </span>
+                </li>
+                <li class="feature-item">
+                  <svg class="feature-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="12.1" cy="12.1" r="1" />
+                  </svg>
+                  <span class="feature-item__text">
+                    Espacio de escucha, respeto y procesos saludables
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <a class="btn-outline btn-outline--block reveal" href="#reservar">
+            Conocé cómo puedo ayudarte
+          </a>
+        </div>
+
+        <figure class="about-me__media reveal reveal--image">
+          <img class="about-me__image" src="assets/about/about-image.png"
+            alt="Lic. María Florencia Brondi, nutricionista" width="548" height="548" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
+    <hr class="divider reveal reveal--divider" />
+
+    <section class="modes" id="consultas" aria-labelledby="modes-heading">
+      <div class="modes__container">
+        <header class="modes__header reveal-group">
+          <p class="modes__eyebrow reveal">
+            <svg class="modes__eyebrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+              focusable="false">
+              <circle cx="12.1" cy="12.1" r="1" />
+            </svg>
+            <span>MODALIDADES</span>
+          </p>
+
+          <h2 id="modes-heading" class="modes__heading reveal">
+            Elegí cómo querés empezar
+          </h2>
+
+          <p class="modes__subtitle reveal">
+            Dos formas de trabajar, según tu ritmo y disponibilidad.
+          </p>
+        </header>
+
+        <div class="modes__cards reveal-group">
+          <article class="modes-card modes-card--filled reveal" aria-labelledby="card-online-title">
+            <div class="modes-card__content">
+              <h3 id="card-online-title" class="modes-card__title">
+                Consultas Online
+              </h3>
+              <p class="modes-card__description">
+                Atendé desde cualquier parte del mundo. Ideal si estás en el
+                exterior o preferís la comodidad de tu hogar.
+              </p>
+              <ul class="modes-card__features">
+                <li class="feature-item">
+                  <svg class="feature-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="12.1" cy="12.1" r="1" />
+                  </svg>
+                  <span class="feature-item__text">
+                    Videollamada de 50 minutos
+                  </span>
+                </li>
+                <li class="feature-item">
+                  <svg class="feature-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="12.1" cy="12.1" r="1" />
+                  </svg>
+                  <span class="feature-item__text">Plan personalizado</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="feature-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="12.1" cy="12.1" r="1" />
+                  </svg>
+                  <span class="feature-item__text">
+                    Seguimiento personalizado
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <footer class="modes-card__footer">
+              <a class="btn-cream btn-cream--block" href="https://wa.me/5491155556666" target="_blank" rel="noopener">
+                Contactar por WhatsApp
+              </a>
+              <p class="modes-card__phone"><a href="tel:+5491155556666">+54 9 11 5555-6666</a></p>
+            </footer>
+          </article>
+
+          <article class="modes-card modes-card--outline reveal" aria-labelledby="card-presencial-title">
+            <div class="modes-card__content">
+              <h3 id="card-presencial-title" class="modes-card__title">
+                Consultas Presenciales
+              </h3>
+              <p class="modes-card__description">
+                Encuentros en consultorio, un espacio cuidado y tranquilo,
+                pensado para vos.
+              </p>
+              <ul class="modes-card__features">
+                <li class="feature-item">
+                  <svg class="feature-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="12.1" cy="12.1" r="1" />
+                  </svg>
+                  <span class="feature-item__text">
+                    Sesión presencial de 50 minutos
+                  </span>
+                </li>
+                <li class="feature-item">
+                  <svg class="feature-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="12.1" cy="12.1" r="1" />
+                  </svg>
+                  <span class="feature-item__text">
+                    Mediciones y composición corporal
+                  </span>
+                </li>
+                <li class="feature-item">
+                  <svg class="feature-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="12.1" cy="12.1" r="1" />
+                  </svg>
+                  <span class="feature-item__text">
+                    Disponibilidad mañana y tarde
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <footer class="modes-card__footer">
+              <a class="btn-primary btn-primary--block" href="#reservar">
+                Reservar turno presencial
+              </a>
+              <p class="modes-card__phone"><a href="tel:+5491155556666">+54 9 11 5555-6666</a></p>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider reveal reveal--divider" />
+
+    <section class="resources" id="recursos" aria-labelledby="resources-heading">
+      <div class="resources__container">
+        <header class="resources__header reveal-group">
+          <p class="resources__eyebrow reveal">
+            <svg class="resources__eyebrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+              focusable="false">
+              <circle cx="12.1" cy="12.1" r="1" />
+            </svg>
+            <span>MATERIAL GRATUITO</span>
+          </p>
+
+          <h2 id="resources-heading" class="resources__heading reveal">
+            Recursos para acompañarte fuera de la consulta
+          </h2>
+
+          <p class="resources__subtitle reveal">
+            Materiales pensados para ayudarte a organizarte, reflexionar y
+            dar pasos en tu día a día.
+          </p>
+        </header>
+
+        <div class="resources__cards reveal-group">
+          <article class="resource-card reveal" aria-labelledby="resource-card-1-title">
+            <div class="resource-card__media" aria-hidden="true">
+                  <img class="resource-card__image" src="./assets/image/IMG-1.png" alt="Recurso 1" />
+            </div>
+            <div class="resource-card__body">
+              <div class="resource-card__text">
+                <h3 id="resource-card-1-title" class="resource-card__title">
+                  Guía para organizar tus comidas
+                </h3>
+                <p class="resource-card__description">
+                  Una herramienta simple para planificar la semana sin caer
+                  en la rigidez.
+                </p>
+              </div>
+              <a class="download-link" href="#" download>
+                <span class="download-link__text">Descargar recurso</span>
+                <svg class="download-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="resource-card reveal" aria-labelledby="resource-card-2-title">
+            <div class="resource-card__media" aria-hidden="true">
+                  <img class="resource-card__image" src="./assets/image/IMG-2.png" alt="Recurso 2" />
+            </div>
+            <div class="resource-card__body">
+              <div class="resource-card__text">
+                <h3 id="resource-card-2-title" class="resource-card__title">
+                  Planificador semanal
+                </h3>
+                <p class="resource-card__description">
+                  Visualizá tus comidas y reducí el estrés diario al pensar
+                  qué cocinar.
+                </p>
+              </div>
+              <a class="download-link" href="#" download>
+                <span class="download-link__text">Descargar recurso</span>
+                <svg class="download-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="resource-card reveal" aria-labelledby="resource-card-3-title">
+            <div class="resource-card__media" aria-hidden="true">
+              <img class="resource-card__image" src="./assets/image/IMG-3.png" alt="Recurso 3" />
+            </div>
+            <div class="resource-card__body">
+              <div class="resource-card__text">
+                <h3 id="resource-card-3-title" class="resource-card__title">
+                  Hábitos alimentarios concientes
+                </h3>
+                <p class="resource-card__description">
+                  Ejercicios prácticos para conectar con tu cuerpo y tus
+                  señales.
+                </p>
+              </div>
+              <a class="download-link" href="#" download>
+                <span class="download-link__text">Descargar recurso</span>
+                <svg class="download-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider reveal reveal--divider" />
+
+    <section class="testimonials" id="testimonios" aria-labelledby="testimonials-heading">
+      <svg class="testimonials__sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-star" viewBox="0 0 24 24">
+          <polygon fill="currentColor"
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </symbol>
+      </svg>
+
+      <div class="testimonials__container">
+        <header class="testimonials__header reveal-group">
+          <p class="testimonials__eyebrow reveal">
+            <svg class="testimonials__eyebrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true" focusable="false">
+              <circle cx="12.1" cy="12.1" r="1" />
+            </svg>
+            <span>TESTIMONIOS</span>
+          </p>
+
+          <h2 id="testimonials-heading" class="testimonials__heading reveal">
+            Experiencias de quienes ya empezaron
+          </h2>
+
+          <p class="testimonials__subtitle reveal">
+            Materiales pensados para ayudarte a organizarte, reflexionar y
+            dar pasos en tu día a día.
+          </p>
+        </header>
+
+        <div class="testimonials__cards reveal-group">
+          <article class="testimonial-card reveal">
+            <header class="testimonial-card__header">
+              <p class="testimonial-card__name">Judith R</p>
+              <span class="testimonial-card__rating" role="img" aria-label="5 de 5 estrellas">
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+              </span>
+            </header>
+            <blockquote class="testimonial-card__text">Una gran profesional, me atendió con mucha calidez y empatía.
+              Me acompañó y orientó en la adquisición de nuevos hábitos alimenticios.
+              Gracias a ella, llegué a mi objetivo.</blockquote>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <header class="testimonial-card__header">
+              <p class="testimonial-card__name">Damaris L</p>
+              <span class="testimonial-card__rating" role="img" aria-label="5 de 5 estrellas">
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+              </span>
+            </header>
+            <blockquote class="testimonial-card__text">La elijo hace más de 7 años, su amor por su trabajo y por
+              enseñarnos hábitos saludables para la vida desde el amor de nuestros cuerpo y sobre todo la salud.
+              Una gran profesional.</blockquote>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <header class="testimonial-card__header">
+              <p class="testimonial-card__name">Vero H</p>
+              <span class="testimonial-card__rating" role="img" aria-label="5 de 5 estrellas">
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+              </span>
+            </header>
+            <blockquote class="testimonial-card__text">La mejor ❤️❤️ Gracias por todo, por orientarnos y ayudarnos en
+              nuestra alimentación 🫶🏻.</blockquote>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <header class="testimonial-card__header">
+              <p class="testimonial-card__name">Anahí R</p>
+              <span class="testimonial-card__rating" role="img" aria-label="5 de 5 estrellas">
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+                <svg class="testimonial-card__star" aria-hidden="true" focusable="false">
+                  <use href="#icon-star" />
+                </svg>
+              </span>
+            </header>
+            <blockquote class="testimonial-card__text">Excelente profesional !!!</blockquote>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider reveal reveal--divider" />
+
+    <section class="start" id="reservar" aria-labelledby="start-heading">
+      <div class="start__container">
+        <div class="start__contact reveal reveal--cta">
+          <p class="start__eyebrow">
+            <svg class="start__eyebrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+              focusable="false">
+              <circle cx="12.1" cy="12.1" r="1" />
+            </svg>
+            <span>EMPEZA HOY</span>
+          </p>
+
+          <h2 id="start-heading" class="start__heading">
+            Si sentís que es momento<br />
+            de empezar, estoy acá.
+          </h2>
+
+          <p class="start__description">
+            Trabajaremos para que vuelvas a relacionarte con la comida<br />
+            desde el cuidado y la confianza, a tu tiempo y a tu manera.
+          </p>
+
+          <a class="btn-cream" href="https://wa.me/5491155556666" target="_blank" rel="noopener">
+            Contactar por WhatsApp
+          </a>
+        </div>
+
+        <div class="start__cards reveal-group">
+          <article class="info-card reveal">
+            <header class="info-card__header">
+              <svg class="info-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                focusable="false">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <h3 class="info-card__title">Modalidades</h3>
+            </header>
+            <p class="info-card__description">
+              Atención online.<br />Presencial en Tabossi E.R
+            </p>
+          </article>
+
+          <article class="info-card reveal">
+            <header class="info-card__header">
+              <svg class="info-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                focusable="false">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <h3 class="info-card__title">Horarios</h3>
+            </header>
+            <p class="info-card__description">
+              Horarios flexibles y<br />coordinado previamente
+            </p>
+          </article>
+
+          <article class="info-card reveal">
+            <header class="info-card__header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-circle-dollar-sign-icon lucide-circle-dollar-sign">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
+                <path d="M12 18V6" />
+              </svg>
+              <h3 class="info-card__title">Formas de pago</h3>
+            </header>
+            <p class="info-card__description">
+              Efectivo - Transferencias - Mercado Pago
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <p class="footer__name">María Florencia Brondi</p>
+          <p class="footer__role">Licenciada en Nutrición</p>
+        </div>
+
+        <address class="footer__contact">
+          <p class="footer__col-label">CONTACTO</p>
+          <p class="footer__contact-line">
+            <a href="tel:+5491112345678">+54 9 11 1234-5678</a>
+          </p>
+          <p class="footer__contact-line">
+            <a href="mailto:contacto@nutricion.com">contacto@nutricion.com</a>
+          </p>
+        </address>
+
+        <div class="footer__location">
+          <p class="footer__col-label">UBICACIÓN</p>
+          <p class="footer__location-line">Tabossi - Entre Ríos</p>
+          <a class="footer__cta-link"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Tabossi%2C+Entre+R%C3%ADos%2C+Argentina"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Ver consultorio en Google Maps (abre en nueva pestaña)">
+            <span>Ver consultorio</span>
+            <svg class="footer__cta-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+              focusable="false">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <hr class="footer__line" />
+
+      <div class="footer__bottom">
+        <small class="footer__copyright">
+          © Federico Villanueva | Product Designer - Todos los derechos reservados.
+        </small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./Js/main.js"></script>
+</body>
+
 </html>

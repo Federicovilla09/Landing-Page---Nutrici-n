@@ -27,8 +27,7 @@
         backdrop-filter: none;
     }
 
-    .navbar__links,
-    .hamburger {
+    .navbar__links {
         display: none;
     }
 
@@ -83,7 +82,7 @@
     }
 
     .hero__heading {
-        font-size: 26px;
+        font-size: var(--font-size-display-sm);
     }
 
     .hero__image {
@@ -95,7 +94,7 @@
     .hero .btn-primary {
         padding: var(--space-12) var(--space-24);
         border-radius: 32px;
-        box-shadow: 1px 1px 4px 0 rgba(46, 46, 46, 1);
+        box-shadow: var(--shadow-button);
     }
 
     .stat__label {
@@ -121,7 +120,7 @@
     }
 
     .about-me__name {
-        font-size: 24px;
+        font-size: var(--font-size-display-xs);
     }
 
     .about-me__subtitle {
@@ -130,7 +129,7 @@
 
     /* MODES — MOBILE */
     .modes__heading {
-        font-size: 24px;
+        font-size: var(--font-size-display-xs);
     }
 
     .modes__cards {
@@ -148,20 +147,32 @@
 
     /* RESOURCES — MOBILE */
     .resources__heading {
-        font-size: 24px;
+        font-size: var(--font-size-display-xs);
     }
 
     .resources__subtitle {
         font-size: var(--font-size-lg);
     }
 
+    /* Card width gives a deliberate 40px peek of the next
+       card: container − peek − gap (16). Capped at the
+       Figma desktop/tablet card width 347 on wider mobile
+       viewports so cards don't grow disproportionately. */
     .resources__cards .resource-card {
-        flex: 0 0 347px;
+        flex: 0 0 calc(100% - 56px);
+        max-width: 347px;
+    }
+
+    /* Mobile cards are narrower than the 347 of tablet/desktop;
+       drop title to 16 so it stays in 1 line for the mainstream
+       380+ viewport range. Below 380, may still wrap (acceptable). */
+    .resource-card__title {
+        font-size: var(--font-size-md);
     }
 
     /* TESTIMONIALS — MOBILE */
     .testimonials__heading {
-        font-size: 24px;
+        font-size: var(--font-size-display-xs);
     }
 
     .testimonials__subtitle {
@@ -178,6 +189,7 @@
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
         scrollbar-width: none;
         padding-bottom: var(--space-8);
     }
@@ -186,8 +198,11 @@
         display: none;
     }
 
+    /* Card width gives a 40px peek of the next card:
+       container − peek − gap (32). Capped at the Figma
+       desktop card width 361 on wider mobile viewports. */
     .testimonial-card {
-        flex: 0 0 calc(100% - var(--space-32));
+        flex: 0 0 calc(100% - 72px);
         max-width: 361px;
         scroll-snap-align: start;
     }
@@ -207,7 +222,7 @@
     }
 
     .start__heading {
-        font-size: 26px;
+        font-size: var(--font-size-display-sm);
         font-weight: var(--font-weight-semibold);
     }
 
@@ -241,49 +256,22 @@
 }
 
 /* TABLET (≥720px) */
+/* ============================================
+   TABLET (≥720px) — all section overrides
+   ============================================ */
 @media (min-width: 720px) {
+    /* NAVBAR */
     .navbar__inner {
         padding: var(--space-24) var(--space-48);
     }
 
-    .navbar__toggle,
-    .navbar__toggle-input {
-        display: none;
-    }
-
-    .navbar__menu {
-        position: static;
-        flex-direction: row;
-        max-height: none;
-        opacity: 1;
-        visibility: visible;
-        padding: 0;
-        background: transparent;
-        box-shadow: none;
-    }
-
     .navbar__links {
         display: none;
     }
-}
 
-/* DESKTOP (≥1024px) */
-@media (min-width: 1024px) {
-    .navbar__inner {
-        padding: var(--navbar-padding-y-desktop) var(--navbar-padding-x-desktop);
-    }
-
-    .navbar__links {
-        display: flex;
-        flex-direction: row;
-        gap: var(--space-8);
-    }
-}
-
-/* HERO — TABLET (≥720px) */
-@media (min-width: 720px) {
+    /* HERO */
     .hero {
-        padding: var(--space-80) var(--navbar-padding-x-tablet) var(--space-64);
+        padding: var(--space-80) var(--section-pad-x-tablet) var(--space-64);
     }
 
     .hero__container {
@@ -307,7 +295,7 @@
     }
 
     .hero__heading {
-        font-size: 42px;
+        font-size: var(--font-size-display-xl);
     }
 
     .hero__subtitle {
@@ -321,7 +309,7 @@
     .hero .btn-primary {
         padding: var(--space-12) var(--space-24);
         border-radius: 32px;
-        box-shadow: 1px 1px 4px 0 rgba(46, 46, 46, 1);
+        box-shadow: var(--shadow-button);
         font-size: var(--font-size-xl);
     }
 
@@ -341,11 +329,11 @@
     }
 
     .divider {
-        width: calc(100% - 2 * var(--navbar-padding-x-tablet));
+        width: calc(100% - 2 * var(--section-pad-x-tablet));
     }
 
     .about-me {
-        padding: 0 var(--navbar-padding-x-tablet);
+        padding: 0 var(--section-pad-x-tablet);
     }
 
     .about-me__container {
@@ -357,7 +345,7 @@
     }
 
     .about-me__name {
-        font-size: 36px;
+        font-size: var(--font-size-display-lg);
     }
 
     .about-me__paragraph,
@@ -375,7 +363,7 @@
     }
 
     .modes {
-        padding: 0 var(--navbar-padding-x-tablet);
+        padding: 0 var(--section-pad-x-tablet);
     }
 
     .modes__container {
@@ -383,7 +371,7 @@
     }
 
     .modes__heading {
-        font-size: 36px;
+        font-size: var(--font-size-display-lg);
     }
 
     .modes__subtitle {
@@ -400,7 +388,7 @@
     }
 
     .modes-card__title {
-        font-size: 26px;
+        font-size: var(--font-size-display-sm);
     }
 
     .modes-card__description {
@@ -416,7 +404,7 @@
     }
 
     .resources {
-        padding: 0 var(--navbar-padding-x-tablet);
+        padding: 0 var(--section-pad-x-tablet);
     }
 
     .resources__container {
@@ -424,7 +412,7 @@
     }
 
     .resources__heading {
-        font-size: 36px;
+        font-size: var(--font-size-display-lg);
     }
 
     .resources__subtitle {
@@ -440,7 +428,7 @@
     }
 
     .testimonials {
-        padding: 0 var(--navbar-padding-x-tablet);
+        padding: 0 var(--section-pad-x-tablet);
     }
 
     .testimonials__container {
@@ -448,21 +436,16 @@
     }
 
     .testimonials__heading {
-        font-size: 36px;
+        font-size: var(--font-size-display-lg);
     }
 
     .testimonials__subtitle {
         display: none;
-        font-size: var(--font-size-lg);
     }
 
     .testimonials__cards {
         grid-template-columns: 1fr;
         gap: var(--space-32);
-    }
-
-    .testimonial-card {
-        min-height: 204px;
     }
 
     .start {
@@ -479,7 +462,7 @@
     }
 
     .start__heading {
-        font-size: 36px;
+        font-size: var(--font-size-display-lg);
     }
 
     .start__description {
@@ -510,9 +493,24 @@
     }
 }
 
+/* ============================================
+   DESKTOP (≥1024px) — all section overrides
+   ============================================ */
 @media (min-width: 1024px) {
+    /* NAVBAR */
+    .navbar__inner {
+        padding: var(--navbar-padding-y-desktop) var(--section-pad-x-desktop);
+    }
+
+    .navbar__links {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-8);
+    }
+
+    /* HERO */
     .hero {
-        padding: var(--space-64) var(--navbar-padding-x-desktop);
+        padding: var(--space-64) var(--section-pad-x-desktop);
     }
 
     .hero__row {
@@ -581,11 +579,11 @@
     }
 
     .divider {
-        width: calc(100% - 2 * var(--navbar-padding-x-desktop));
+        width: calc(100% - 2 * var(--section-pad-x-desktop));
     }
 
     .about-me {
-        padding: 0 var(--navbar-padding-x-desktop);
+        padding: 0 var(--section-pad-x-desktop);
     }
 
     .about-me__container {
@@ -601,7 +599,7 @@
     }
 
     .about-me__name {
-        font-size: 36px;
+        font-size: var(--font-size-display-lg);
     }
 
     .about-me__paragraph,
@@ -625,11 +623,11 @@
     }
 
     .modes {
-        padding: 0 var(--navbar-padding-x-desktop);
+        padding: 0 var(--section-pad-x-desktop);
     }
 
     .modes__heading {
-        font-size: 36px;
+        font-size: var(--font-size-display-lg);
     }
 
     .modes__cards {
@@ -647,7 +645,7 @@
     }
 
     .modes-card__title {
-        font-size: 26px;
+        font-size: var(--font-size-display-sm);
     }
 
     .modes-card__features .feature-item__text {
@@ -659,11 +657,11 @@
     }
 
     .resources {
-        padding: 0 var(--navbar-padding-x-desktop);
+        padding: 0 var(--section-pad-x-desktop);
     }
 
     .resources__heading {
-        font-size: 36px;
+        font-size: var(--font-size-display-lg);
     }
 
     .resources__cards {
@@ -672,6 +670,7 @@
         gap: var(--space-40);
         overflow: visible;
         scroll-snap-type: none;
+        touch-action: auto;
         padding-bottom: 0;
     }
 
@@ -680,11 +679,11 @@
     }
 
     .testimonials {
-        padding: 0 var(--navbar-padding-x-desktop);
+        padding: 0 var(--section-pad-x-desktop);
     }
 
     .testimonials__heading {
-        font-size: 36px;
+        font-size: var(--font-size-display-lg);
     }
 
     .testimonials__subtitle {
@@ -695,12 +694,8 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .testimonial-card {
-        min-height: 0;
-    }
-
     .start {
-        padding: 0 var(--navbar-padding-x-desktop);
+        padding: 0 var(--section-pad-x-desktop);
     }
 
     .start__contact {
@@ -708,7 +703,14 @@
     }
 
     .start__heading {
-        font-size: 36px;
+        font-size: var(--font-size-display-lg);
+    }
+
+    /* Figma 2440:1415 — fixed 336×56 button. Default
+       computed height is ~51 (padding 12 + 20×1.366 lh),
+       this lock-in restores the exact Figma rhythm. */
+    .start__contact .btn-cream {
+        min-height: 56px;
     }
 
     .start__cards {
@@ -718,7 +720,7 @@
     }
 
     .footer {
-        padding: var(--space-56) var(--navbar-padding-x-desktop);
+        padding: var(--space-56) var(--section-pad-x-desktop);
     }
 
     .footer__top {

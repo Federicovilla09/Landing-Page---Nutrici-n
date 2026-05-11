@@ -259,6 +259,7 @@
     gap: var(--space-32);
     padding: var(--space-24);
     border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
     width: 100%;
 }
 
@@ -382,7 +383,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-40);
-    padding: 0 var(--space-24);
+    padding: 0 var(--space-16);
 }
 
 .resource-card__text {
@@ -555,12 +556,12 @@
    - Reusable: <hr class="divider" />
    ============================================ */
 .divider {
-    width: calc(100% - 2 * var(--navbar-padding-x-mobile));
+    width: calc(100% - 2 * var(--section-pad-x-mobile));
     max-width: var(--container-content);
     margin: var(--space-128) auto;
     height: 0;
     border: 0;
-    border-top: 1px solid var(--divider-color);
+    border-top: 1px solid var(--neutral-400);
 }
 
 /* ============================================
@@ -580,49 +581,6 @@
     line-height: var(--line-height-relaxed);
     letter-spacing: var(--letter-spacing-normal);
     color: var(--neutral-700);
-}
-
-/* ============================================
-   HAMBURGER (mobile menu trigger)
-   ============================================ */
-.hamburger {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 40px;
-    height: 40px;
-    padding: var(--space-8);
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    transition: background-color var(--transition-fast);
-}
-
-.hamburger:hover {
-    background-color: var(--neutral-200);
-}
-
-.hamburger__bar {
-    display: block;
-    width: 100%;
-    height: 2px;
-    border-radius: var(--radius-pill);
-    background-color: var(--neutral-900);
-    transition: transform var(--transition-base), opacity var(--transition-base);
-    transform-origin: center;
-}
-
-/* Open state — turns hamburger into "X" */
-.navbar__toggle-input:checked ~ .navbar__inner .hamburger__bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.navbar__toggle-input:checked ~ .navbar__inner .hamburger__bar:nth-child(2) {
-    opacity: 0;
-}
-
-.navbar__toggle-input:checked ~ .navbar__inner .hamburger__bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ============================================
