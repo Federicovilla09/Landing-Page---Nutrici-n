@@ -83,6 +83,7 @@
 
     .hero__heading {
         font-size: var(--font-size-display-sm);
+        letter-spacing: 0.031em;
     }
 
     .hero__image {
@@ -296,6 +297,10 @@
 
     .hero__heading {
         font-size: var(--font-size-display-xl);
+    }
+
+    .hero__heading-break {
+        display: none;
     }
 
     .hero__subtitle {
