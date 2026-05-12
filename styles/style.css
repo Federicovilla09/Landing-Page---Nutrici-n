@@ -1,5 +1,5 @@
 /* ============================================
-   RESET
+   RESETEO
    ============================================ */
 *,
 *::before,
@@ -12,9 +12,9 @@
 html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    /* Pair with body's clip below — covers cases where some
-       browsers let a child spill at the <html> level even when
-       <body> is clipped. */
+    /* Va de la mano con el clip del body de abajo — cubre los
+       casos en los que algunos navegadores permiten que un hijo
+       se desborde a nivel <html> aunque <body> tenga clip. */
     overflow-x: clip;
 }
 
@@ -56,7 +56,7 @@ button {
 }
 
 /* ============================================
-   NAVBAR LAYOUT
+   DISEÑO DEL NAVBAR
    ============================================ */
 .navbar {
     position: sticky;
@@ -67,9 +67,10 @@ button {
     box-shadow: var(--shadow-navbar);
 }
 
-/* Premium glass effect: translucent navbar with soft backdrop
-   blur. Wrapped in @supports so browsers without backdrop-filter
-   keep the solid white bg above (no legibility loss). */
+/* Efecto vidrio premium: navbar translúcido con un suave desenfoque
+   de fondo. Envuelto en @supports para que los navegadores sin
+   backdrop-filter mantengan el fondo blanco sólido de arriba (sin
+   pérdida de legibilidad). */
 @supports (
     (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
 ) {
@@ -145,7 +146,7 @@ button {
     gap: var(--space-8);
 }
 
-/* HERO LAYOUT */
+/* DISEÑO DEL HERO */
 .hero {
     width: 100%;
     padding: 0 var(--section-pad-x-mobile);
@@ -225,7 +226,7 @@ button {
 }
 
 /* ============================================
-   HERO STATISTICS
+   ESTADÍSTICAS DEL HERO
    ============================================ */
 .hero__stats {
     display: flex;
@@ -242,7 +243,7 @@ button {
 }
 
 /* ============================================
-   ABOUT ME LAYOUT
+   DISEÑO DE LA SECCIÓN SOBRE MÍ
    ============================================ */
 .about-me {
     width: 100%;
@@ -295,8 +296,9 @@ button {
 }
 
 .about-me__name {
-    /* 36px is unique to this section — kept literal to avoid
-       polluting the global font-size scale used by the hero. */
+    /* 36px es exclusivo de esta sección — se mantiene literal para
+       no contaminar la escala global de tamaños de fuente que usa
+       el hero. */
     font-size: var(--font-size-display-md);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-tight);
@@ -347,7 +349,7 @@ button {
 }
 
 /* ============================================
-   MODES LAYOUT
+   DISEÑO DE LA SECCIÓN MODALIDADES
    ============================================ */
 .modes {
     width: 100%;
@@ -387,8 +389,8 @@ button {
 }
 
 .modes__heading {
-    /* 36px is unique to this section's h2 — kept literal,
-       same approach as .about-me__name. */
+    /* 36px es exclusivo del h2 de esta sección — se mantiene
+       literal, mismo criterio que .about-me__name. */
     font-size: var(--font-size-display-md);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-tight);
@@ -412,7 +414,7 @@ button {
 }
 
 /* ============================================
-   RESOURCES LAYOUT
+   DISEÑO DE LA SECCIÓN RECURSOS
    ============================================ */
 .resources {
     width: 100%;
@@ -452,8 +454,8 @@ button {
 }
 
 .resources__heading {
-    /* 36px is the section h2 size — kept literal, same approach
-       as .about-me__name and .modes__heading. */
+    /* 36px es el tamaño del h2 de la sección — se mantiene literal,
+       mismo criterio que .about-me__name y .modes__heading. */
     font-size: var(--font-size-display-md);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-tight);
@@ -469,11 +471,11 @@ button {
     color: var(--neutral-700);
 }
 
-/* Horizontal scroll slider on mobile/tablet (CSS only).
-   Restored to a 3-col grid at ≥1024 in responsive.css.
-   `touch-action: pan-x` locks gestures to the horizontal
-   axis inside the slider so vertical wobble in a swipe
-   doesn't accidentally scroll the page. */
+/* Slider de desplazamiento horizontal en mobile/tablet (sólo CSS).
+   Se restaura a una grilla de 3 columnas en ≥1024 dentro de
+   responsive.css. `touch-action: pan-x` limita los gestos al eje
+   horizontal dentro del slider para que un movimiento vertical
+   en el swipe no provoque scroll de la página por accidente. */
 .resources__cards {
     display: flex;
     flex-wrap: nowrap;
@@ -499,7 +501,7 @@ button {
 }
 
 /* ============================================
-   TESTIMONIALS LAYOUT
+   DISEÑO DE LA SECCIÓN TESTIMONIOS
    ============================================ */
 .testimonials {
     width: 100%;
@@ -539,8 +541,9 @@ button {
 }
 
 .testimonials__heading {
-    /* 36px is the section h2 size — kept literal, same approach
-       as .about-me__name, .modes__heading, .resources__heading. */
+    /* 36px es el tamaño del h2 de la sección — se mantiene literal,
+       mismo criterio que .about-me__name, .modes__heading y
+       .resources__heading. */
     font-size: var(--font-size-display-md);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-tight);
@@ -559,18 +562,19 @@ button {
 .testimonials__cards {
     display: grid;
     grid-template-columns: 1fr;
-    /* `1fr` on auto-generated rows equalizes every row to
-       the tallest card's content. Combined with the grid's
-       default align-items: stretch, all cards end up the
-       same height regardless of review length. Works on
-       tablet 1-col stack and desktop 2-col grid. Mobile
-       overrides to flex below and ignores this. */
+    /* `1fr` sobre las filas autogeneradas iguala cada fila a la
+       altura del contenido de la card más alta. Combinado con el
+       align-items: stretch por defecto de la grilla, todas las
+       cards quedan con la misma altura sin importar el largo de
+       la reseña. Funciona en el stack de 1 columna en tablet y
+       en la grilla de 2 columnas en desktop. Mobile lo sobrescribe
+       a flex más abajo y lo ignora. */
     grid-auto-rows: 1fr;
     gap: var(--space-24);
 }
 
-/* Hidden SVG sprite host for the lucide-star symbol.
-   Width/height 0 keeps it out of the layout flow. */
+/* Contenedor oculto del sprite SVG para el símbolo lucide-star.
+   width/height en 0 lo mantienen fuera del flujo del layout. */
 .testimonials__sprite {
     position: absolute;
     width: 0;
@@ -579,7 +583,7 @@ button {
 }
 
 /* ============================================
-   START / FINAL CTA LAYOUT
+   DISEÑO DEL CTA FINAL (START)
    ============================================ */
 .start {
     width: 100%;
@@ -630,7 +634,7 @@ button {
 }
 
 .start__heading {
-    /* Bold/36 from Figma — kept literal as with other section h2s. */
+    /* Bold/36 de Figma — se mantiene literal como en los demás h2 de sección. */
     font-size: var(--font-size-display-md);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);
@@ -648,8 +652,8 @@ button {
     color: var(--neutral-100);
 }
 
-/* CTA inside the green block matches Figma's fixed 336 width
-   while staying responsive on small viewports. */
+/* El CTA dentro del bloque verde respeta el ancho fijo de 336
+   de Figma manteniéndose responsivo en viewports chicos. */
 .start__contact .btn-cream {
     width: 100%;
     max-width: 336px;
@@ -662,9 +666,9 @@ button {
 }
 
 /* ============================================
-   FOOTER LAYOUT (v2 — 3 columns, dark background)
-   - 160px gap from the previous section, no
-     visible divider between them.
+   DISEÑO DEL FOOTER (v2 — 3 columnas, fondo oscuro)
+   - Gap de 160px respecto a la sección anterior,
+     sin divisor visible entre ambas.
    ============================================ */
 .footer {
     width: 100%;
@@ -695,7 +699,7 @@ button {
     display: flex;
     flex-direction: column;
     gap: var(--space-8);
-    font-style: normal; /* reset <address> italic default */
+    font-style: normal; /* resetea el itálico por defecto de <address> */
 }
 
 .footer__name {
@@ -747,9 +751,9 @@ button {
     border-radius: 2px;
 }
 
-/* "Ver consultorio" link with trailing arrow icon.
-   Scoped to footer — single use, not promoted to a
-   reusable component yet. */
+/* Enlace "Ver consultorio" con icono de flecha al final.
+   Limitado al footer — uso único, todavía no se promovió
+   a un componente reutilizable. */
 .footer__cta-link {
     display: inline-flex;
     align-items: center;

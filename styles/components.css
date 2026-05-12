@@ -1,4 +1,4 @@
-/* NAV PILL (links) */
+/* NAV PILL (enlaces de navegación) */
 .nav-pill {
     display: inline-flex;
     align-items: center;
@@ -37,7 +37,7 @@
     font-weight: var(--font-weight-medium);
 }
 
-/* CTA BUTTON */
+/* BOTÓN CTA */
 .btn-cta {
     display: inline-flex;
     align-items: center;
@@ -75,9 +75,9 @@
     outline-offset: 3px;
 }
 
-/* Mobile-only persistent CTA, lives at <body> level so the
-   navbar's backdrop-filter (containing-block trap) does not
-   anchor it to the navbar. Shown only at <720px. */
+/* CTA persistente sólo en mobile, vive a nivel <body> para que
+   el backdrop-filter del navbar (trampa de containing-block) no
+   lo ancle al navbar. Se muestra sólo a <720px. */
 .btn-cta--floating {
     display: none;
 }
@@ -91,8 +91,8 @@
     animation: btn-cta-dot-pulse 2s ease-in-out infinite;
 }
 
-/* Subtle continuous pulse for the floating CTA dot.
-   transform + opacity are GPU-friendly and don't reflow. */
+/* Pulso continuo y sutil del punto del CTA flotante.
+   transform + opacity son amigables con la GPU y no provocan reflow. */
 @keyframes btn-cta-dot-pulse {
     0%,
     100% {
@@ -105,7 +105,7 @@
     }
 }
 
-/* Respect users who prefer reduced motion. */
+/* Respeta a los usuarios que prefieren menos movimiento. */
 @media (prefers-reduced-motion: reduce) {
     .btn-cta__dot {
         animation: none;
@@ -113,7 +113,7 @@
 }
 
 /* ============================================
-   PRIMARY BUTTON (large dark pill — hero CTA)
+   BOTÓN PRIMARIO (pill oscuro grande — CTA del hero)
    ============================================ */
 .btn-primary {
     display: inline-flex;
@@ -153,7 +153,7 @@
 }
 
 /* ============================================
-   OUTLINE BUTTON (transparent pill — about-me CTA)
+   BOTÓN OUTLINE (pill transparente — CTA de sobre mí)
    ============================================ */
 .btn-outline {
     display: inline-flex;
@@ -196,7 +196,7 @@
 }
 
 /* ============================================
-   CREAM BUTTON (cream pill — modes filled card)
+   BOTÓN CREMA (pill crema — card relleno de modalidades)
    ============================================ */
 .btn-cream {
     display: inline-flex;
@@ -236,7 +236,7 @@
 }
 
 /* ============================================
-   FEATURE ITEM (icon + label, used in lists)
+   FEATURE ITEM (icono + etiqueta, usado en listas)
    ============================================ */
 .feature-item {
     display: flex;
@@ -260,9 +260,9 @@
 }
 
 /* ============================================
-   MODES CARD
-   - Reusable card for modality blocks
-   - Two variants: filled (dark green) / outline (white)
+   CARD DE MODALIDADES
+   - Card reutilizable para los bloques de modalidad
+   - Dos variantes: filled (verde oscuro) / outline (blanca)
    ============================================ */
 .modes-card {
     display: flex;
@@ -292,7 +292,7 @@
 }
 
 .modes-card__title {
-    /* 26px is specific to card titles — kept literal. */
+    /* 26px es específico de los títulos de card — se mantiene literal. */
     font-size: 22px;
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-tight);
@@ -317,9 +317,9 @@
     gap: var(--space-12);
 }
 
-/* Inside cards, feature dots inherit the card's text color
-   instead of the default --accent-primary, so they pair with
-   the card's chromatic context. */
+/* Dentro de las cards, los puntos de feature heredan el color
+   del texto de la card en lugar del --accent-primary por defecto,
+   así se acompasan con el contexto cromático de la card. */
 .modes-card__features .feature-item__icon {
     color: currentColor;
 }
@@ -345,10 +345,10 @@
 }
 
 /* ============================================
-   RESOURCE CARD
-   - Reusable card for downloadable materials
-   - Image area (placeholder ready for future <img>)
-   - Body with title/description + download link
+   CARD DE RECURSO
+   - Card reutilizable para materiales descargables
+   - Área de imagen (placeholder listo para un futuro <img>)
+   - Cuerpo con título/descripción + enlace de descarga
    ============================================ */
 .resource-card {
     display: flex;
@@ -381,8 +381,9 @@
     color: var(--neutral-800);
 }
 
-/* Drop-in styling for future <img class="resource-card__image" />.
-   Container's aspect-ratio prevents layout shift when image loads. */
+/* Estilado listo para un futuro <img class="resource-card__image" />.
+   El aspect-ratio del contenedor evita el layout shift cuando la
+   imagen termina de cargar. */
 .resource-card__image {
     display: block;
     width: 100%;
@@ -419,8 +420,8 @@
 }
 
 /* ============================================
-   DOWNLOAD LINK (text + trailing icon, full width)
-   - Visually a text link, not a pill button
+   ENLACE DE DESCARGA (texto + icono al final, ancho completo)
+   - Visualmente un enlace de texto, no un botón pill
    ============================================ */
 .download-link {
     display: flex;
@@ -462,9 +463,9 @@
 }
 
 /* ============================================
-   TESTIMONIAL CARD
-   - Reusable review card with header (name + stars)
-   - Cream-light background, teal shadow (Figma)
+   CARD DE TESTIMONIO
+   - Card reutilizable de reseña con encabezado (nombre + estrellas)
+   - Fondo cream-light, sombra teal (Figma)
    ============================================ */
 .testimonial-card {
     display: flex;
@@ -516,8 +517,8 @@
 
 /* ============================================
    INFO CARD
-   - Compact card with icon + title + description
-   - Used in the final CTA section to surface contact info
+   - Card compacto con icono + título + descripción
+   - Usado en la sección del CTA final para exponer info de contacto
    ============================================ */
 .info-card {
     display: flex;
@@ -561,10 +562,10 @@
 }
 
 /* ============================================
-   DIVIDER (section separator)
-   - Centered horizontally, max 1120 (Figma)
-   - Width respects each breakpoint's side padding
-   - Reusable: <hr class="divider" />
+   DIVIDER (separador de sección)
+   - Centrado horizontalmente, máx 1120 (Figma)
+   - El ancho respeta el padding lateral de cada breakpoint
+   - Reutilizable: <hr class="divider" />
    ============================================ */
 .divider {
     width: calc(100% - 2 * var(--section-pad-x-mobile));
@@ -576,7 +577,7 @@
 }
 
 /* ============================================
-   STAT (number + label)
+   STAT (número + etiqueta)
    ============================================ */
 .stat__number {
     font-size: var(--font-size-xl);
@@ -595,12 +596,12 @@
 }
 
 /* ============================================
-   ON-SCROLL REVEAL ANIMATIONS
-   Minimal, premium fade-up system. Elements opt in
-   via .reveal; JS adds .is-visible on intersection.
-   After the animation completes, JS removes the
-   .reveal classes so they don't slow button hover/
-   press transitions afterwards.
+   ANIMACIONES DE REVELADO AL SCROLL
+   Sistema minimalista premium de fade-up. Los elementos
+   optan vía .reveal; el JS agrega .is-visible al intersectar.
+   Una vez completada la animación, el JS quita las clases
+   .reveal para que no ralenticen luego las transiciones de
+   hover/press de los botones.
    ============================================ */
 .reveal {
     opacity: 0;
@@ -611,18 +612,18 @@
     will-change: opacity, transform;
 }
 
-/* Image variant — softer reveal: slight scale, no translate. */
+/* Variante imagen — revelado más suave: leve scale, sin translate. */
 .reveal.reveal--image {
     transform: scale(0.98);
 }
 
-/* Divider variant — horizontal grow, subtle. */
+/* Variante divisor — crecimiento horizontal, sutil. */
 .reveal.reveal--divider {
     transform: scaleX(0.85);
     transform-origin: center;
 }
 
-/* CTA Final — slower for more presence. */
+/* CTA Final — más lento para darle más presencia. */
 .reveal.reveal--cta {
     transition-duration: 900ms;
 }
@@ -632,7 +633,7 @@
     transform: none;
 }
 
-/* Stagger direct children of .reveal-group (up to 4). */
+/* Escalonado de los hijos directos de .reveal-group (hasta 4). */
 .reveal-group > .reveal:nth-child(1) { transition-delay: 0ms; }
 .reveal-group > .reveal:nth-child(2) { transition-delay: 80ms; }
 .reveal-group > .reveal:nth-child(3) { transition-delay: 160ms; }
@@ -646,12 +647,13 @@
     }
 }
 
-/* Resource cards live in a horizontal scroller below desktop.
-   Cards 2 and 3 only peek by ~40px, well under the 0.15
-   intersection threshold, so the observer never fires and they
-   stayed invisible — the user couldn't tell more cards existed
-   to swipe to. Keep them always visible on mobile/tablet; the
-   reveal still plays at ≥1024px where they form a 3-col grid. */
+/* Las resource cards viven en un scroller horizontal por debajo
+   de desktop. Las cards 2 y 3 sólo asoman ~40px, bastante por
+   debajo del umbral de intersección de 0.15, por lo que el observer
+   no se disparaba y quedaban invisibles — el usuario no se
+   enteraba de que había más cards para deslizar. Las dejamos
+   siempre visibles en mobile/tablet; el reveal sigue activándose
+   en ≥1024px donde forman una grilla de 3 columnas. */
 @media (max-width: 1023.98px) {
     .resources__cards .resource-card.reveal,
     .testimonials__cards .testimonial-card.reveal {

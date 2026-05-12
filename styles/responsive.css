@@ -1,26 +1,27 @@
 /* ============================================
-   MOBILE-FIRST: base styles handle <720px.
-   This file holds tablet (≥720px) and desktop
-   (≥1024px) overrides.
+   MOBILE-FIRST: los estilos base manejan <720px.
+   Este archivo contiene los overrides de tablet
+   (≥720px) y desktop (≥1024px).
 
-   Tablet boundary lowered from 768 → 720 so
-   real tablet viewports around 744 (Figma's
-   tablet composition is designed at this size)
-   get tablet rules instead of mobile.
+   El límite de tablet se bajó de 768 → 720 para
+   que los viewports reales de tablet de alrededor
+   de 744 (la composición de tablet de Figma está
+   diseñada a ese tamaño) reciban las reglas de
+   tablet en vez de las de mobile.
    ============================================ */
 
 /* ============================================
-   MOBILE (default, <720px)
-   - Minimal navbar: brand + CTA only
-   - Nav links hidden (no hamburger menu)
-   - Pills come back at desktop (≥1024)
+   MOBILE (por defecto, <720px)
+   - Navbar minimal: brand + CTA solamente
+   - Enlaces de navegación ocultos (sin menú hamburguesa)
+   - Los pills vuelven en desktop (≥1024)
    ============================================ */
 @media (max-width: 720px) {
     /* NAVBAR — MOBILE
-       Glass effect now stays on at mobile (inherited from the
-       @supports block in style.css). The floating CTA was moved
-       to <body> level to escape the backdrop-filter containing
-       block, so the trap is gone. */
+       El efecto vidrio ahora se mantiene en mobile (heredado del
+       bloque @supports de style.css). El CTA flotante se movió al
+       nivel <body> para escapar del containing block del
+       backdrop-filter, por lo que la trampa ya no existe. */
     .navbar__links {
         display: none;
     }
@@ -38,13 +39,13 @@
         color: var(--brand-dark);
     }
 
-    /* Hide the in-navbar CTA on mobile — the floating gemini
-       takes over as the persistent mobile action. */
+    /* Oculta el CTA del navbar en mobile — el gemini flotante
+       toma su lugar como acción persistente en mobile. */
     .navbar .btn-cta {
         display: none;
     }
 
-    /* FLOATING CTA — MOBILE */
+    /* CTA FLOTANTE — MOBILE */
     .btn-cta--floating {
         display: inline-flex;
         position: fixed;
@@ -92,7 +93,7 @@
         aspect-ratio: auto;
     }
 
-    /* Hero CTA */
+    /* CTA del hero */
     .hero .btn-primary {
         padding: var(--space-12) var(--space-24);
         border-radius: 32px;
@@ -103,12 +104,12 @@
         font-size: var(--font-size-xs);
     }
 
-    /* DIVIDER — MOBILE */
+    /* DIVISOR — MOBILE */
     .divider {
         margin-block: 104px;
     }
 
-    /* ABOUT ME — MOBILE */
+    /* SOBRE MÍ — MOBILE */
     .about-me__container {
         gap: var(--space-64);
     }
@@ -129,7 +130,7 @@
         font-size: var(--font-size-xs);
     }
 
-    /* MODES — MOBILE */
+    /* MODALIDADES — MOBILE */
     .modes__heading {
         font-size: var(--font-size-display-xs);
     }
@@ -147,7 +148,7 @@
         font-size: var(--font-size-md);
     }
 
-    /* RESOURCES — MOBILE */
+    /* RECURSOS — MOBILE */
     .resources__heading {
         font-size: var(--font-size-display-xs);
     }
@@ -156,23 +157,25 @@
         font-size: var(--font-size-lg);
     }
 
-    /* Card width gives a deliberate 40px peek of the next
-       card: container − peek − gap (16). Capped at the
-       Figma desktop/tablet card width 347 on wider mobile
-       viewports so cards don't grow disproportionately. */
+    /* El ancho de la card deja un peek deliberado de 40px de la
+       siguiente: contenedor − peek − gap (16). Capado al ancho
+       de card de tablet/desktop de Figma (347) en viewports de
+       mobile más anchos para que las cards no crezcan
+       desproporcionadamente. */
     .resources__cards .resource-card {
         flex: 0 0 calc(100% - 56px);
         max-width: 347px;
     }
 
-    /* Mobile cards are narrower than the 347 of tablet/desktop;
-       drop title to 16 so it stays in 1 line for the mainstream
-       380+ viewport range. Below 380, may still wrap (acceptable). */
+    /* Las cards de mobile son más angostas que los 347 de
+       tablet/desktop; bajamos el título a 16 para que se mantenga
+       en 1 línea en el rango mainstream de 380+. Por debajo de
+       380, puede seguir wrappeando (aceptable). */
     .resource-card__title {
         font-size: var(--font-size-md);
     }
 
-    /* TESTIMONIALS — MOBILE */
+    /* TESTIMONIOS — MOBILE */
     .testimonials__heading {
         font-size: var(--font-size-display-xs);
     }
@@ -200,16 +203,16 @@
         display: none;
     }
 
-    /* Card width gives a 40px peek of the next card:
-       container − peek − gap (32). Capped at the Figma
-       desktop card width 361 on wider mobile viewports. */
+    /* El ancho de la card deja un peek de 40px de la siguiente:
+       contenedor − peek − gap (32). Capado al ancho de card de
+       desktop de Figma (361) en viewports de mobile más anchos. */
     .testimonial-card {
         flex: 0 0 calc(100% - 72px);
         max-width: 361px;
         scroll-snap-align: start;
     }
 
-    /* START / CTA FINAL — MOBILE */
+    /* CTA FINAL (START) — MOBILE */
     .start {
         padding: 0;
     }
@@ -241,7 +244,7 @@
         padding: var(--space-12) var(--space-8);
     }
 
-    /* FOOTER — MOBILE */
+    /* PIE DE PÁGINA — MOBILE */
     .footer {
         padding: var(--space-56) var(--space-16) var(--space-128);
     }
@@ -259,7 +262,7 @@
 
 /* TABLET (≥720px) */
 /* ============================================
-   TABLET (≥720px) — all section overrides
+   TABLET (≥720px) — overrides de todas las secciones
    ============================================ */
 @media (min-width: 720px) {
     /* NAVBAR */
@@ -500,7 +503,7 @@
 }
 
 /* ============================================
-   DESKTOP (≥1024px) — all section overrides
+   DESKTOP (≥1024px) — overrides de todas las secciones
    ============================================ */
 @media (min-width: 1024px) {
     /* NAVBAR */
@@ -712,9 +715,9 @@
         font-size: var(--font-size-display-lg);
     }
 
-    /* Figma 2440:1415 — fixed 336×56 button. Default
-       computed height is ~51 (padding 12 + 20×1.366 lh),
-       this lock-in restores the exact Figma rhythm. */
+    /* Figma 2440:1415 — botón fijo de 336×56. La altura
+       computada por defecto es ~51 (padding 12 + 20×1.366 lh);
+       este lock-in restaura el ritmo exacto de Figma. */
     .start__contact .btn-cream {
         min-height: 56px;
     }
