@@ -473,9 +473,10 @@ button {
 
 /* Slider de desplazamiento horizontal en mobile/tablet (sólo CSS).
    Se restaura a una grilla de 3 columnas en ≥1024 dentro de
-   responsive.css. `touch-action: pan-x` limita los gestos al eje
-   horizontal dentro del slider para que un movimiento vertical
-   en el swipe no provoque scroll de la página por accidente. */
+   responsive.css. `touch-action: pan-x pan-y` deja que el navegador
+   decida según la dirección inicial del gesto: swipe horizontal
+   mueve el slider, swipe vertical hace scroll de la página (no se
+   bloquea al apoyar el dedo sobre una card). */
 .resources__cards {
     display: flex;
     flex-wrap: nowrap;
@@ -485,7 +486,7 @@ button {
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
+    touch-action: pan-x pan-y;
     scrollbar-width: none;
     padding-bottom: var(--space-8);
 }
