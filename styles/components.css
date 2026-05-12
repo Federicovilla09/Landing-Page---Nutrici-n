@@ -645,3 +645,17 @@
         transition: none;
     }
 }
+
+/* Resource cards live in a horizontal scroller below desktop.
+   Cards 2 and 3 only peek by ~40px, well under the 0.15
+   intersection threshold, so the observer never fires and they
+   stayed invisible — the user couldn't tell more cards existed
+   to swipe to. Keep them always visible on mobile/tablet; the
+   reveal still plays at ≥1024px where they form a 3-col grid. */
+@media (max-width: 1023.98px) {
+    .resources__cards .resource-card.reveal,
+    .testimonials__cards .testimonial-card.reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
