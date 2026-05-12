@@ -231,6 +231,21 @@
         font-weight: var(--font-weight-semibold);
     }
 
+    /* En mobile el <br /> partía la frase en dos fragmentos que a su
+       vez wrapeaban en 4 líneas desparejas. Lo ocultamos y dejamos
+       que text-wrap: balance arme un bloque más uniforme; max-width
+       en ch evita que el bloque ocupe todo el ancho en viewports
+       mobile más amplios. */
+    .start__description br {
+        display: none;
+    }
+
+    .start__description {
+        max-width: 32ch;
+        margin-inline: auto;
+        text-wrap: balance;
+    }
+
     .start__cards {
         gap: var(--space-32);
         padding: 0 var(--space-16);
