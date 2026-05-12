@@ -1,5 +1,5 @@
 :root {
-    /* NEUTRAL SCALE */
+    /* ESCALA NEUTRA */
     --neutral-100: #ffffff;
     --neutral-200: #f5f5f5;
     --neutral-400: #cfcfcf;
@@ -9,7 +9,7 @@
     --neutral-800: #2e2e2e;
     --neutral-900: #0b1510;
 
-    /* BRAND */
+    /* MARCA */
     --accent-primary: #b85c3d;
     --accent-primary-fg: var(--neutral-100);
     --brand-logo: #284f3c;
@@ -19,7 +19,7 @@
     --brand-rating: #3f735c;
     --shadow-warm: rgba(235, 232, 220, 1);
 
-    /* SPACING */
+    /* ESPACIADOS */
     --space-2: 2px;
     --space-4: 4px;
     --space-6: 6px;
@@ -37,7 +37,7 @@
     --space-128: 128px;
     --space-160: 160px;
 
-    /* TYPOGRAPHY */
+    /* TIPOGRAFÍA */
     --font-family-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
 
     --font-size-xs: 12px;
@@ -48,7 +48,7 @@
     --font-size-2xl: 30px;
     --font-size-3xl: 48px;
 
-    /* Display headings (h1/h2 scale) */
+    /* Encabezados destacados (escala h1/h2) */
     --font-size-display-xs: 24px;
     --font-size-display-sm: 26px;
     --font-size-display-md: 28px;
@@ -67,13 +67,13 @@
     --letter-spacing-normal: 0.057em;
     --letter-spacing-wide: 0.067em;
 
-    /* BORDER-RADIUS */
+    /* RADIOS DE BORDE */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-pill: 9999px;
 
-    /* SHADOWS */
+    /* SOMBRAS */
     --shadow-navbar: 0 4px 4px 0 var(--shadow-warm);
     --shadow-image: 1px 1px 8px 0 rgba(75, 72, 72, 1);
     --shadow-card: 1px 1px 8px 0 var(--shadow-warm);
@@ -83,12 +83,12 @@
     --shadow-cta-hover: 0 2px 4px 0 rgba(11, 21, 16, 0.10), 0 8px 18px 0 rgba(11, 21, 16, 0.14);
     --shadow-cta-active: 0 1px 2px 0 rgba(11, 21, 16, 0.08), 0 2px 6px 0 rgba(11, 21, 16, 0.08);
 
-    /* TRANSITIONS */
+    /* TRANSICIONES */
     --transition-fast: 150ms ease-out;
     --transition-base: 200ms ease-out;
     --transition-slow: 300ms ease-out;
 
-    /* LAYOUT */
+    /* DISEÑO */
     --container-max: 1280px;
     --container-content: 1120px;
     --section-pad-x-mobile: var(--space-16);

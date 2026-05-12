@@ -1,16 +1,16 @@
 /* ============================================
-   On-scroll reveal — premium minimal system.
+   Revelado al hacer scroll — sistema minimalista premium.
 
-   Elements opt in via .reveal (+ optional modifiers
-   .reveal--image / .reveal--divider / .reveal--cta).
-   Stagger inside a .reveal-group is handled by CSS
-   via :nth-child(N) transition-delay.
+   Los elementos optan por el efecto con .reveal (+ modificadores
+   opcionales .reveal--image / .reveal--divider / .reveal--cta).
+   El escalonado dentro de un .reveal-group se gestiona desde
+   el CSS mediante transition-delay con :nth-child(N).
 
-   When an element enters the viewport we toggle
-   .is-visible, then strip the .reveal/* classes once
-   the transition has played so they don't keep the
-   slow easing on subsequent transforms (button press,
-   hover micro-interactions, etc.).
+   Cuando un elemento entra en el viewport se alterna la clase
+   .is-visible y luego se quitan las clases .reveal/* una vez
+   reproducida la transición, para que no sigan aplicando el
+   easing lento sobre transformaciones posteriores (pulsación
+   de botones, microinteracciones de hover, etc.).
    ============================================ */
 (function () {
     "use strict";
@@ -23,8 +23,8 @@
     ).matches;
     const supportsIO = "IntersectionObserver" in window;
 
-    // Fallback: show everything instantly, drop the
-    // reveal hooks so they never interfere with styles.
+    // Fallback: mostramos todo al instante y retiramos los hooks
+    // de reveal para que no interfieran con los estilos.
     if (!supportsIO || prefersReducedMotion) {
         targets.forEach((el) => {
             el.classList.remove(
@@ -37,10 +37,10 @@
         return;
     }
 
-    // Max possible duration before cleanup:
-    //   reveal--cta = 900ms transition
-    // + 240ms nth-child(4) stagger delay
-    // + 60ms safety buffer
+    // Duración máxima posible antes de la limpieza:
+    //   reveal--cta = 900ms de transición
+    // + 240ms de retraso de escalonado en nth-child(4)
+    // + 60ms de margen de seguridad
     const CLEANUP_AFTER_MS = 1200;
 
     const cleanup = (el) => {
@@ -65,10 +65,10 @@
             });
         },
         {
-            // Element needs ~15% visible before we trigger,
-            // and we shrink the viewport by 10% from the bottom
-            // so the reveal fires when the element is well into
-            // view rather than at the very edge.
+            // El elemento necesita ~15% visible antes de disparar
+            // el efecto, y reducimos el viewport un 10% desde abajo
+            // para que el reveal se active cuando el elemento esté
+            // bien dentro de la vista y no apenas en el borde.
             threshold: 0.15,
             rootMargin: "0px 0px -10% 0px",
         }
