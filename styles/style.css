@@ -230,6 +230,7 @@ button {
    ============================================ */
 .hero__stats {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: var(--space-24);
 }
@@ -239,7 +240,7 @@ button {
     flex-direction: column;
     gap: var(--space-6);
     flex: 1 1 auto;
-    min-width: 120px;
+    min-width: 104px;
 }
 
 /* ============================================
